@@ -243,7 +243,7 @@ ascend@ascend-HP-ProDesk-600-G4-PCI-MT:~/sample-ascendcamera$ ps -ef | grep pres
 ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_server.py --app display
 ```
 
-如上所示_5758_即为Ascendcamera应用对应的Presenter Server服务的进程ID。
+如上所示 _5758_ 即为Ascendcamera应用对应的Presenter Server服务的进程ID。
 
 若想停止此服务，执行如下命令：
 

@@ -15,7 +15,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Obtain the source code package.
 
-    Download all the code in the sample-facedetection repository at  [https://github.com/Ascend/sample-ascendcamera](https://github.com/Ascend/sample-ascendcamera)  to any directory on Ubuntu Server where Mind Studio is located as the Mind Studio installation user, for example,  _/home/ascend/sample-ascendcamera_.
+    Download all the code in the sample-ascendcamera repository at  [https://github.com/Ascend/sample-ascendcamera](https://github.com/Ascend/sample-ascendcamera)  to any directory on Ubuntu Server where Mind Studio is located as the Mind Studio installation user, for example,  _/home/ascend/sample-ascendcamera_.
 
 2.  Log in to Ubuntu Server where Mind Studio is located as the Mind Studio installation user and set the environment variable  **DDK\_HOME**.
 
