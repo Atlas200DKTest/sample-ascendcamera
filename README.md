@@ -64,7 +64,7 @@ Before running the application, obtain the source code package and configure the
 
 3.  Start Presenter Server.
 
-    Run the following command to start the Presenter Server program of the face detection application in the background:
+    Run the following command to start the Presenter Server program of the Ascend Camera application in the background:
 
     **python3 script/presenterserver/presenter\_server.py --app display &**
 

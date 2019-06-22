@@ -64,7 +64,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
 3.  启动Presenter Server。
 
-    执行如下命令在后台启动Face Detection应用的Presenter Server主程序。
+    执行如下命令在后台启动Ascend Camera应用的Presenter Server主程序。
 
     **python3 script/presenterserver/presenter\_server.py --app display &**
 
