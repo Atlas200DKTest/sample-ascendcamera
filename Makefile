@@ -41,10 +41,6 @@ local_shared_libs := \
 	OMX_hisi_video_decoder \
 	OMX_hisi_video_encoder \
 	Dvpp_png_decoder \
-	OMX_Core \
-	OMX_hisi_vdec_core \
-	OMX_Core_VENC \
-	OMX_common \
 	ascend_ezdvpp \
 	presenteragent
 
