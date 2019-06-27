@@ -34,13 +34,6 @@ local_shared_libs := \
 	protobuf \
 	slog \
 	media_mini \
-	Dvpp_api \
-	Dvpp_jpeg_decoder \
-	Dvpp_jpeg_encoder \
-	Dvpp_vpc \
-	OMX_hisi_video_decoder \
-	OMX_hisi_video_encoder \
-	Dvpp_png_decoder \
 	ascend_ezdvpp \
 	presenteragent
 
