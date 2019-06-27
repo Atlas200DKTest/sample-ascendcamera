@@ -663,8 +663,7 @@ bool AscendCameraParameter::VerifyFpsValue() {
   if (is_video_ && (fps_ < kMinFps || fps_ > kMaxFps)) {
     log_info_stream.str("");
     log_info_stream << "The ascendcamera parameter --fps has invalid value:"
-                    << fps_956
-                    << ", value range:1~20.";
+                    << fps_ << ", value range:1~20.";
     string cerr_info = log_info_stream.str();
 
     cerr << "[ERROR] " << cerr_info << endl;
