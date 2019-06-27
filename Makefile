@@ -30,9 +30,9 @@ local_inc_dirs := \
 
 local_shared_libs := \
 	c_sec \
+	matrixdaemon \
 	pthread \
 	protobuf \
-	slog \
 	media_mini \
 	ascend_ezdvpp \
 	presenteragent

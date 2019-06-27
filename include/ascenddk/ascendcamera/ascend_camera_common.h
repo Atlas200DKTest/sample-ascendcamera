@@ -34,7 +34,7 @@
 #ifndef ASCENDDK_ASCENDCAMERA_ASCEND_CAMERA_COMMON_H_
 #define ASCENDDK_ASCENDCAMERA_ASCEND_CAMERA_COMMON_H_
 
-#include "toolchain/slog.h"
+#include "hiaiengine/log.h"
 
 namespace ascend {
 
@@ -43,22 +43,22 @@ namespace ascendcamera {
 // used for record info-level log info to dlog
 #ifndef ASC_LOG_INFO
 #define ASC_LOG_INFO(fmt, ...) \
-  dlog_info(kAscendModuleId, "[%s:%d] " fmt "\n", __FILE__, __LINE__, \
+  HIAI_ENGINE_LOG( "[%s:%d] " fmt "\n", __FILE__, __LINE__, \
             ##__VA_ARGS__)
 #endif
 
 // used for record warning-level log info to dlog
 #ifndef ASC_LOG_WARN
 #define ASC_LOG_WARN(fmt, ...) \
-  dlog_warn(kAscendModuleId, "[%s:%d] " fmt "\n", __FILE__,  __LINE__, \
-            ##__VA_ARGS__)
+  HIAI_ENGINE_LOG(HIAI_GRAPH_WARNING_CODE, \
+     "[%s:%d] " fmt "\n", __FILE__,  __LINE__, ##__VA_ARGS__)
 #endif
 
 // used for record error-level log info to dlog
 #ifndef ASC_LOG_ERROR
 #define ASC_LOG_ERROR(fmt, ...) \
-  dlog_error(kAscendModuleId, "[%s:%d] " fmt "\n", __FILE__,  __LINE__, \
-             ##__VA_ARGS__)
+  HIAI_ENGINE_LOG(HIAI_ENGINE_RUN_ARGS_NOT_RIGHT, \
+     "[%s:%d] " fmt "\n", __FILE__,  __LINE__, ##__VA_ARGS__)
 #endif
 
 // used for error info description
@@ -66,9 +66,6 @@ struct ErrorDescription {
   int code;
   std::string code_info;
 };
-
-// ascend module id, used for record dlog
-const int kAscendModuleId = ASCENDDK;
 
 // has no write permission
 const int kHasNoAccessPermission = -1;
