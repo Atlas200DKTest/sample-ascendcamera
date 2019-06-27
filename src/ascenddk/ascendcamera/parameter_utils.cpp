@@ -52,9 +52,6 @@ const unsigned int kMaxFileNameLength = 255;
 // regex for verify .jpg file name
 const string kRegexJpgFile = "-|(^.+\\.(jpg)$)";
 
-// regex for verify .h264 file name
-const string kRegexH264File = "-|(^.+\\.(h264)$)";
-
 // success to remove file
 const int kRemoveSuccess = 0;
 
@@ -258,20 +255,14 @@ const bool ParameterUtils::VerifyFileName(const bool is_image,
       return false;
     }
   } else {  // verify file name when media type is video
-    regex regex_h264(kRegexH264File.c_str());
+    string cerr_info = "The ascendcamera parameter -o value:";
+    cerr_info += output_file;
+    cerr_info += ", does not support -v(video format).";
 
-    // check video file name is match regex expression
-    if (!regex_match(file_name, regex_h264)) {
-      string cerr_info = "The ascendcamera parameter -o value:";
-      cerr_info += output_file;
-      cerr_info += " should be '-' or a valid file name end with"
-          " '.h264'.";
+    cerr << "[ERROR] " << cerr_info << endl;
+    ASC_LOG_ERROR("%s", cerr_info.c_str());
 
-      cerr << "[ERROR] " << cerr_info << endl;
-      ASC_LOG_ERROR("%s", cerr_info.c_str());
-
-      return false;
-    }
+    return false;
   }
 
   return true;
