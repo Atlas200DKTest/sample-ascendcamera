@@ -663,7 +663,8 @@ bool AscendCameraParameter::VerifyFpsValue() {
   if (is_video_ && (fps_ < kMinFps || fps_ > kMaxFps)) {
     log_info_stream.str("");
     log_info_stream << "The ascendcamera parameter --fps has invalid value:"
-                    << fps_ << ", value range:1~20.";
+                    << fps_956
+                    << ", value range:1~20.";
     string cerr_info = log_info_stream.str();
 
     cerr << "[ERROR] " << cerr_info << endl;
@@ -951,7 +952,7 @@ void AscendCameraParameter::DisplayHelpInfo() const {
       "\n\t(3)ascendcamera -v -c 1 --fps 20 -t 0 -w 704 -h 576 -s 10.10.10.1"
       ":7006/channel2\n\tGet video from camera channel 1 until exits,"
       " image width equal to 704 and height equal to 576, fps equal to 20,"
-      " output image to presenter:10.10.10.1:7006/channel2\n"
+      " output image to presenter:10.10.10.1:7006/channel2\n";
 
   cerr << helpInfo << endl;
   ASC_LOG_INFO("Display help information on cerr.");

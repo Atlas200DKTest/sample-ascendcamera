@@ -44,7 +44,6 @@
 #include "ascenddk/ascendcamera/output_info_process.h"
 #include "ascenddk/ascendcamera/main_process.h"
 #include "ascenddk/ascendcamera/ascend_camera_parameter.h"
-#include "ascenddk/ascendcamera/thread_safe_queue.h"
 
 namespace ascend {
 namespace ascendcamera {
@@ -174,6 +173,17 @@ class MainProcess {
   int OutputInstanceInit(int width, int height);
 
   /**
+   * @brief Dvpp process and output the data
+   * @param [in] CameraOutputPara *output_para: data buffer from camera
+   * @param [in] DvppProcess *dvpp_process: point to dvpp instance
+   * @param [in] OutputInfoProcess *output_info_process: output instance
+   * @return 0:success -1:fail
+   */
+  int DvppAndOutputProc(CameraOutputPara *output_para,
+                       ascend::utils::DvppProcess *dvpp_process,
+                       OutputInfoProcess *output_info_process);
+
+  /**
    * @brief deal with a frame data from camera.
    * @return
    */
@@ -184,12 +194,6 @@ class MainProcess {
    * @param [in] int ret: result in upper level.
    */
   void ExitProcess(int ret);
-
-  /**
-   * @brief get size of queue element
-   * @return queue size
-   */
-  int GetQueueSize();
 };
 }
 }

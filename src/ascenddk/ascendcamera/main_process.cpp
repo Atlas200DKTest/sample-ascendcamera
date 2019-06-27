@@ -52,11 +52,6 @@ MainProcess::MainProcess() {
   control_object_.dvpp_process = nullptr;
   control_object_.output_process = nullptr;
   control_object_.loop_flag = kNoNeedLoop;
-  control_object_.multi_frame_process.thread_id = 0;
-  control_object_.multi_frame_process.safe_queue = nullptr;
-  control_object_.multi_frame_process.current_buf = nullptr;
-  control_object_.multi_frame_process.open_thread_flag = kThreadStop;
-  control_object_.multi_frame_process.thread_status = kThreadInvalidStatus;
 
   // initialization debugging info
   debug_info_.total_frame = 0;
@@ -84,12 +79,6 @@ MainProcess::~MainProcess() {
     delete control_object_.output_process;
     control_object_.dvpp_process = nullptr;
   }
-
-  if (control_object_.multi_frame_process.safe_queue != nullptr) {
-    delete control_object_.multi_frame_process.safe_queue;
-    control_object_.multi_frame_process.safe_queue = nullptr;
-  }
-
 }
 
 int MainProcess::OutputInstanceInit(int width, int height) {
@@ -225,11 +214,7 @@ int MainProcess::Init(int argc, char *argv[]) {
   return ret;
 }
 
-int MainProcess::GetQueueSize() {
-  return control_object_.multi_frame_process.safe_queue->Size();
-}
-
-int MainProcess::DvppAndOuputProc(CameraOutputPara *output_para,
+int MainProcess::DvppAndOutputProc(CameraOutputPara *output_para,
                                   ascend::utils::DvppProcess *dvpp_process,
                                   OutputInfoProcess *output_info_process) {
   int ret = 0;
@@ -263,7 +248,7 @@ int MainProcess::DoOnce() {
     return ret;
   }
 
-  ret = DvppAndOuputProc(&output_para, control_object_.dvpp_process,
+  ret = DvppAndOutputProc(&output_para, control_object_.dvpp_process,
                          control_object_.output_process);
   if (ret != kMainProcessOk) {
     return ret;
