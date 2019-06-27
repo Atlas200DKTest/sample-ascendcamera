@@ -67,9 +67,6 @@ struct ErrorDescription {
   std::string code_info;
 };
 
-// ascend module id, used for record dlog
-const int kAscendModuleId = ASCENDDK;
-
 // has no write permission
 const int kHasNoAccessPermission = -1;
 
