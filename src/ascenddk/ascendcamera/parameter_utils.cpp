@@ -256,7 +256,7 @@ const bool ParameterUtils::VerifyFileName(const bool is_image,
     }
   } else {  // verify file name when media type is video
     string cerr_info = "The ascendcamera has parameter -v,";
-    cerr_info += "does not support -o parameter in the same time.";
+    cerr_info += " does not support -o parameter in the same time.";
 
     cerr << "[ERROR] " << cerr_info << endl;
     ASC_LOG_ERROR("%s", cerr_info.c_str());
