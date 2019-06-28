@@ -126,7 +126,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     **./ascendcamera -v -c  _1_   -t  _60_ **--fps  _20_**  -w  _704_  -h  _576_  -s  _10.10.10.1_:7002/**_**presenter\_view\_app\_name**_
 
     -   -v：代表获取摄像头的视频，用来在Presenter Server端展示。
-    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。
+    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)中的“常用操作 > 如何查询摄像头所属Channel”。
     -   -t：表示获取60s的视频文件，如果不指定此参数，则获取视频文件直至程序退出。
     -   --fps：表示存储视频的帧率，取值范围为1\~20，如果不设置此参数，则默认存储的视频帧率为10fps。
     -   -w：表示存储视频的宽。
