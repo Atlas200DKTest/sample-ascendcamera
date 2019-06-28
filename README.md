@@ -96,18 +96,18 @@ Before running the application, obtain the source code package and configure the
     
     Obtain an image from the camera and save it as a .jpg file. If a file with the same name already exists, overwrite it.
 
-        **./ascendcamera -i -c 1 -o  **_/localDirectory/filename.jpg_** **--overwrite**
+    **./ascendcamera -i -c 1 -o  _/localDirectory/filename.jpg_ --overwrite**
 
-        -   **-i**: Indicates that a JPG image is obtained.
-        -   **-c**: Indicates the channel to which a camera belongs to. This parameter can be set to  **0**  or  **1**. The value  **0**  corresponds to  **Camera1**, and the value  **1**  corresponds to  **Camera2**. If this parameter is not set, the default value  **0**  is used. For details, see  **View the Channel to Which a Camera Belongs** of [Atlas 200 DK User Guide](https://www.huawei.com/minisite/ascend/en/filedetail_2.html).
-        -   **-o**: Indicates the file storage location.  **localDirectory**  is the name of a local folder.  **filename.jpg**  is the name of a saved image, which can be user-defined.
+    -   **-i**: Indicates that a JPG image is obtained.
+    -   **-c**: Indicates the channel to which a camera belongs to. This parameter can be set to  **0**  or  **1**. The value  **0**  corresponds to  **Camera1**, and the value  **1**  corresponds to  **Camera2**. If this parameter is not set, the default value  **0**  is used. For details, see  **View the Channel to Which a Camera Belongs** of [Atlas 200 DK User Guide](https://www.huawei.com/minisite/ascend/en/filedetail_2.html).
+    -   **-o**: Indicates the file storage location.  **localDirectory**  is the name of a local folder.  **filename.jpg**  is the name of a saved image, which can be user-defined.
 
-            >![](doc/source/img/icon-note.gif) **NOTE:**   
+         >![](doc/source/img/icon-note.gif) **NOTE:**   
             >The  **HwHiAiUser**  user must have the read and write permissions on the path.  
 
-        -   **--overwrite**: Overwrites the existing file with the same name.
+     -   **--overwrite**: Overwrites the existing file with the same name.
 
-        For other parameters, run the  **./ascendcamera**  command or the  **./ascendcamera --help**  command. For details, see the help information.
+     For other parameters, run the  **./ascendcamera**  command or the  **./ascendcamera --help**  command. For details, see the help information.
 
 
 ## Playing a Real-Time Video Through Presenter Server<a name="en-us_topic_0167333650_section65735410292"></a>

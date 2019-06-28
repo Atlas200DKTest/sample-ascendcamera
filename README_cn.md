@@ -96,18 +96,18 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     
     从摄像头获取图片并保存为jpg文件，如果已经存在同名文件则覆盖。
 
-        **./ascendcamera -i -c 1 -o   _/localDirectory/filename.jpg_  --overwrite**
+    **./ascendcamera -i -c 1 -o   _/localDirectory/filename.jpg_  --overwrite**
 
-        -   -i：代表获取jpg格式的图片。
-        -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)中的“常用操作 > 如何查询摄像头所属Channel”。
-        -   -o：表示文件存储位置，此处localDirectory为本地已存在的文件夹名称，filename.jpg为保存的图片名称，可用户自定义。
+    -   -i：代表获取jpg格式的图片。
+    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)中的“常用操作 > 如何查询摄像头所属Channel”。
+    -   -o：表示文件存储位置，此处localDirectory为本地已存在的文件夹名称，filename.jpg为保存的图片名称，可用户自定义。
 
-            >![](doc/source/img/icon-note.gif) **说明：**   
+      >![](doc/source/img/icon-note.gif) **说明：**   
             >此路径HwHiAiUser需要有可读写权限。  
 
-        -   --overwrite：覆盖已存在的同名文件。
+    -   --overwrite：覆盖已存在的同名文件。
 
-        其他详细参数请执行 **./ascendcamera** 命令或者 **./ascendcamera --help** 命令参见帮助信息。
+    其他详细参数请执行 **./ascendcamera** 命令或者 **./ascendcamera --help** 命令参见帮助信息。
 
 
 
