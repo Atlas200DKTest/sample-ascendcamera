@@ -41,7 +41,7 @@ Before running the application, obtain the source code package and configure the
 ## Deployment<a name="en-us_topic_0167333650_section1378112174282"></a>
 
 1.  Log in to the root directory of the Ascend camera application code as the MindSpore Studio installation user, for example,  _**/home/ascend/sample-ascendcamera**_.
-2.  <a name="en-us_topic_0167333650_li08019112542"></a>Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server.
+2.  Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server.
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
 
@@ -62,7 +62,7 @@ Before running the application, obtain the source code package and configure the
     **Figure  1**  Project deployment<a name="en-us_topic_0167333650_fig184321447181017"></a>  
     ![](doc/source/img/project-deployment.png "project-deployment")
 
-3.  Start Presenter Server.
+3.  <a name="en-us_topic_0167333650_li08019112542"></a>Start Presenter Server.
 
     Run the following command to start the Presenter Server program of the Ascend Camera application in the background:
 
@@ -122,7 +122,7 @@ Before running the application, obtain the source code package and configure the
 
 3.  Run the following command to transmit the video captured by the camera to Presenter Server:
 
-    **./ascendcamera -v -c  _1_  -t  _60_ **--fps  _20_**  -w  _704_  -h  _576_  -s  _10.10.10.1_:7002/**_**presenter\_view\_app\_name**_
+    **./ascendcamera -v -c  _1_  -t  _60_ **--fps  _20_**  -w  _704_  -h  _576_  -s  _192.168.1.223_:7002/**_**presenter\_view\_app\_name**_
 
     -   **-v**: Indicates that the video of the camera is obtained and displayed on the Presenter Server.
     -   **-c**: Indicates the channel to which a camera belongs to. This parameter can be set to  **0**  or  **1**. The value  **0**  corresponds to  **Camera1**  in, and the value  **1**  corresponds to  **Camera2**  in. If this parameter is not set, the default value  **0**  is used. For details, see  **Common Operations > View the Channel to Which a Camera Belongs** of [Atlas 200 DK User Guide](https://www.huawei.com/minisite/ascend/en/filedetail_2.html).
@@ -130,7 +130,7 @@ Before running the application, obtain the source code package and configure the
     -   **--fps**: Indicates the frame rate of a saved video. The value range is 1–20. The default video frame rate is 10 fps.
     -   **-w**: Indicates the width of a saved video.
     -   **-h**: Indicates the height of a saved video.
-    -   _10.10.10.1_  is the IP address of Presenter Server \(that is, the IP address for accessing Presenter Server entered in  [2](#en-us_topic_0167333650_li08019112542)\). The default port number of Presenter Server corresponding to the Ascend camera application is  **7002**.
+    -   _192.168.1.223_  is the IP address corresponding to the 7002 port in Presenter Server \(that is, the IP address is userd for communicating with the Atlas 200 DK developer board entered in [3](#en-us_topic_0167333650_li08019112542)\). The default port number of Presenter Server corresponding to the Ascend camera application is  **7002**.
     -   _presenter\_view\_app\_name_: Indicates  **View Name**  displayed on the Presenter Server page, which is user-defined.
 
     For other parameters, run the  **./ascendcamera**  command or the  **./ascendcamera --help**  command. For details, see the help information.
