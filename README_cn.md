@@ -205,7 +205,7 @@ ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_se
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167333823_p23491040134916"><a name="zh-cn_topic_0167333823_p23491040134916"></a><a name="zh-cn_topic_0167333823_p23491040134916"></a>Presenter Server依赖的Python库</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p234964011491"><a name="zh-cn_topic_0167333823_p234964011491"></a><a name="zh-cn_topic_0167333823_p234964011491"></a>可以在python官网https://pypi.org/上搜索相关包进行安装。若使用pip3 install命令在线下载，可以使用如下命令指定相关版本进行下载，例如：</p><p>pip3 install tornado==5.1.0  -i  指定库的安装源  --trusted-host  安装源的主机名</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p234964011491"><a name="zh-cn_topic_0167333823_p234964011491"></a><a name="zh-cn_topic_0167333823_p234964011491"></a>可以在python官网 https://pypi.org/ 上搜索相关包进行安装。若使用pip3 install命令在线下载，可以使用如下命令指定相关版本进行下载，例如：</p><p>pip3 install tornado==5.1.0  -i  指定库的安装源  --trusted-host  安装源的主机名</p>
 </td>
 </tr>
 </tbody>
