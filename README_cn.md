@@ -41,7 +41,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 ## 部署<a name="zh-cn_topic_0167333823_section11947911019"></a>
 
 1.  以MindSpore Studio安装用户进入ascendcamera应用代码所在根目录，如“/home/ascend/sample-ascendcamera“。
-2.  执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作。
+2.  执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作，其中Presenter Server用于接收Application发送过来的数据并通过浏览器进行结果展示。
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
 
@@ -132,7 +132,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     -   -w：表示存储视频的宽。
     -   -h：表示存储视频的高。
     -   -s后面的值 _192.168.1.223_ 为Presenter中7002端口对应的IP地址（如[3](#zh-cn_topic_0167333823_li08019112542)中启动Presenter Server回显显示，即为与Atlas 200 DK开发者板通信的IP地址），7002为Ascendcamera应用对应的Presenter Server服务器的默认端口号。
-    -   _presenter\_view\_app\_name_ 为在Presenter Server端展示的“View Name“，用户自定义。
+    -   _presenter\_view\_app\_name_ 为在Presenter Server端展示的“View Name“，用户自定义，需要保持唯一。
 
     其他详细参数请执行 **./ascendcamera** 命令或者 **./ascendcamera --help** 命令参见帮助信息。
 
@@ -187,16 +187,16 @@ ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_se
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167333823_p19431399359"><a name="zh-cn_topic_0167333823_p19431399359"></a><a name="zh-cn_topic_0167333823_p19431399359"></a>与Presenter Server进行交互的API接口。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p16684144715560"><a name="zh-cn_topic_0167333823_p16684144715560"></a><a name="zh-cn_topic_0167333823_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master/presenteragent" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master/presenteragent</a></p>
-<p id="zh-cn_topic_0167333823_p82315442578"><a name="zh-cn_topic_0167333823_p82315442578"></a><a name="zh-cn_topic_0167333823_p82315442578"></a>下载后请保持文件夹名称为<span class="filepath" id="zh-cn_topic_0167333823_filepath541722722118"><a name="zh-cn_topic_0167333823_filepath541722722118"></a><a name="zh-cn_topic_0167333823_filepath541722722118"></a>“presenteragent”</span>。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p16684144715560"><a name="zh-cn_topic_0167333823_p16684144715560"></a><a name="zh-cn_topic_0167333823_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<p id="zh-cn_topic_0167333823_p82315442578"><a name="zh-cn_topic_0167333823_p82315442578"></a><a name="zh-cn_topic_0167333823_p82315442578"></a>请获取此路径下的presenteragent文件夹，下载后请保持文件夹名称为<span class="filepath" id="zh-cn_topic_0167333823_filepath541722722118"><a name="zh-cn_topic_0167333823_filepath541722722118"></a><a name="zh-cn_topic_0167333823_filepath541722722118"></a>“presenteragent”</span>。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0167333823_row1839610216202"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0167333823_p974822982618"><a name="zh-cn_topic_0167333823_p974822982618"></a><a name="zh-cn_topic_0167333823_p974822982618"></a>Presenter Server</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167333823_p17486293261"><a name="zh-cn_topic_0167333823_p17486293261"></a><a name="zh-cn_topic_0167333823_p17486293261"></a>显示Presenter Agent推送的结果，可以通过浏览器访问。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p18748529102619"><a name="zh-cn_topic_0167333823_p18748529102619"></a><a name="zh-cn_topic_0167333823_p18748529102619"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master/presenterserver" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master/presenterserver</a></p>
-<p id="zh-cn_topic_0167333823_p14457641112711"><a name="zh-cn_topic_0167333823_p14457641112711"></a><a name="zh-cn_topic_0167333823_p14457641112711"></a>下载后请保持文件夹名称为 <span class="filepath" id="zh-cn_topic_0167333823_filepath7457144115272"><a name="zh-cn_topic_0167333823_filepath7457144115272"></a><a name="zh-cn_topic_0167333823_filepath7457144115272"></a>“presenterserver”</span>.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p18748529102619"><a name="zh-cn_topic_0167333823_p18748529102619"></a><a name="zh-cn_topic_0167333823_p18748529102619"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<p id="zh-cn_topic_0167333823_p14457641112711"><a name="zh-cn_topic_0167333823_p14457641112711"></a><a name="zh-cn_topic_0167333823_p14457641112711"></a>请获取此路径下的presenterserver文件夹，下载后请保持文件夹名称为 <span class="filepath" id="zh-cn_topic_0167333823_filepath7457144115272"><a name="zh-cn_topic_0167333823_filepath7457144115272"></a><a name="zh-cn_topic_0167333823_filepath7457144115272"></a>“presenterserver”</span>.</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0167333823_row41448585315"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0167333823_p183492409496"><a name="zh-cn_topic_0167333823_p183492409496"></a><a name="zh-cn_topic_0167333823_p183492409496"></a>tornado (5.1.0)</p>
@@ -205,7 +205,7 @@ ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_se
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167333823_p23491040134916"><a name="zh-cn_topic_0167333823_p23491040134916"></a><a name="zh-cn_topic_0167333823_p23491040134916"></a>Presenter Server依赖的Python库</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p234964011491"><a name="zh-cn_topic_0167333823_p234964011491"></a><a name="zh-cn_topic_0167333823_p234964011491"></a>请自行搜索相关源进行安装。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p234964011491"><a name="zh-cn_topic_0167333823_p234964011491"></a><a name="zh-cn_topic_0167333823_p234964011491"></a>可以在python官网https://pypi.org/上搜索相关包进行安装。若使用pip3 install命令在线下载，可以使用如下命令指定相关版本进行下载，例如：</p><p>pip3 install tornado==5.1.0  -i  指定库的安装源  --trusted-host  安装源的主机名</p>
 </td>
 </tr>
 </tbody>
