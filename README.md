@@ -41,7 +41,7 @@ Before running the application, obtain the source code package and configure the
 ## Deployment<a name="en-us_topic_0167333650_section1378112174282"></a>
 
 1.  Log in to the root directory of the Ascend camera application code as the MindSpore Studio installation user, for example,  _**/home/ascend/sample-ascendcamera**_.
-2.  Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server.
+2.  Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server. The Presenter Server is used to receive the data sent by the application and display the result through the browser.
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
 
@@ -131,7 +131,7 @@ Before running the application, obtain the source code package and configure the
     -   **-w**: Indicates the width of a saved video.
     -   **-h**: Indicates the height of a saved video.
     -   _192.168.1.223_  is the IP address corresponding to the 7002 port in Presenter Server \(that is, the IP address is userd for communicating with the Atlas 200 DK developer board entered in [3](#en-us_topic_0167333650_li08019112542)\). The default port number of Presenter Server corresponding to the Ascend camera application is  **7002**.
-    -   _presenter\_view\_app\_name_: Indicates  **View Name**  displayed on the Presenter Server page, which is user-defined.
+    -   _presenter\_view\_app\_name_: Indicates  **View Name**  displayed on the Presenter Server page, which is user-defined. The value of this parameter must be unique on the Presenter Server page.
 
     For other parameters, run the  **./ascendcamera**  command or the  **./ascendcamera --help**  command. For details, see the help information.
 
@@ -187,8 +187,8 @@ Download the dependent software libraries to the **sample-ascendcamera/script** 
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0167333650_p19431399359"><a name="en-us_topic_0167333650_p19431399359"></a><a name="en-us_topic_0167333650_p19431399359"></a><span>API for interacting with the Presenter Server</span>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master/presenteragent" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master/presenteragent</a></p>
-<p id="en-us_topic_0167333650_p82315442578"><a name="en-us_topic_0167333650_p82315442578"></a><a name="en-us_topic_0167333650_p82315442578"></a>After the download, keep the folder name <span class="filepath" id="en-us_topic_0167333650_filepath19800155745817"><a name="en-us_topic_0167333650_filepath19800155745817"></a><a name="en-us_topic_0167333650_filepath19800155745817"></a><b>presenteragent</b></span>.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<p id="en-us_topic_0167333650_p82315442578"><a name="en-us_topic_0167333650_p82315442578"></a><a name="en-us_topic_0167333650_p82315442578"></a>Obtain the presenteragent folder in this path, after the download, keep the folder name <span class="filepath" id="en-us_topic_0167333650_filepath19800155745817"><a name="en-us_topic_0167333650_filepath19800155745817"></a><a name="en-us_topic_0167333650_filepath19800155745817"></a><b>presenteragent</b></span>.</p>
 </td>
 </tr>
 
@@ -196,8 +196,8 @@ Download the dependent software libraries to the **sample-ascendcamera/script** 
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0167333650_p19431399359"><a name="en-us_topic_0167333650_p19431399359"></a><a name="en-us_topic_0167333650_p19431399359"></a><span></span>Display the reasoning result pushed by the Presenter Agent, which can be accessed through a browser.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master/presenterserver" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master/presenterserver</a></p>
-<p id="en-us_topic_0167333650_p82315442578"><a name="en-us_topic_0167333650_p82315442578"></a><a name="en-us_topic_0167333650_p82315442578"></a>After the download, keep the folder name <span class="filepath" id="en-us_topic_0167333650_filepath19800155745817"><a name="en-us_topic_0167333650_filepath19800155745817"></a><a name="en-us_topic_0167333650_filepath19800155745817"></a><b>presenterserver</b></span>.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<p id="en-us_topic_0167333650_p82315442578"><a name="en-us_topic_0167333650_p82315442578"></a><a name="en-us_topic_0167333650_p82315442578"></a>Obtain the presenterserver folder in this path, after the download, keep the folder name <span class="filepath" id="en-us_topic_0167333650_filepath19800155745817"><a name="en-us_topic_0167333650_filepath19800155745817"></a><a name="en-us_topic_0167333650_filepath19800155745817"></a><b>presenterserver</b></span>.</p>
 </td>
 </tr>
 
@@ -205,7 +205,7 @@ Download the dependent software libraries to the **sample-ascendcamera/script** 
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0167333650_p19431399359"><a name="en-us_topic_0167333650_p19431399359"></a><a name="en-us_topic_0167333650_p19431399359"></a><span>Python libraries that Presenter Server depends on.</span>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560">Search for related sources and install them.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560">You can search for related packages on the Python official website https://pypi.org/ for installation. If you run the pip3 install command to download the file online, you can run the following command to specify the version to be downloaded: </p><p><b>pip3 install tornado==5.1.0 -i  <i>Installation source of the specified library</i>  --trusted-host <i>Host name of the installation source</i></b></p>
 </td>
 </tr>
 </tbody>
