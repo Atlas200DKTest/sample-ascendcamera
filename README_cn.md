@@ -80,8 +80,10 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
     **图 3**  主页显示<a name="zh-cn_topic_0167333823_fig64391558352"></a>  
     ![](doc/source/img/主页显示.png "主页显示")
-	
-	**图 4** IP地址示例 <a name="zh-cn_topic_0167333823_fig64391558353"></a>  
+
+    Presenter Server、MindSpore Studio与Atlas 200 DK之间通信使用的IP地址示例如下图所示：
+
+     **图 4**  IP地址示例<a name="zh-cn_topic_0167333823_fig64391558353"></a>  
     ![](doc/source/img/connect.png "IP地址示例")
 
     其中：
