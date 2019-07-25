@@ -6,8 +6,8 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
 部署此Sample前，需要准备好以下环境：
 
--   已完成MindSpore Studio的安装，详细请参考[MindSpore Studio安装指南](https://www.huawei.com/minisite/ascend/cn/filedetail_1.html)。
--   已完成Atlas 200 DK开发者板与MindSpore Studio的连接，交叉编译器的安装，SD卡的制作及基本信息的配置等，详细请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)。
+-   已完成MindSpore Studio的安装。
+-   已完成Atlas 200 DK开发者板与MindSpore Studio的连接，交叉编译器的安装，SD卡的制作及基本信息的配置等。
 
 ## 软件准备<a name="zh-cn_topic_0167333823_section8534138124114"></a>
 
@@ -109,7 +109,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     **./ascendcamera -i -c 1 -o   _/localDirectory/filename.jpg_  --overwrite**
 
     -   -i：代表获取jpg格式的图片。
-    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)中的“常用操作 > 如何查询摄像头所属Channel”。
+    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。
     -   -o：表示文件存储位置，此处localDirectory为本地已存在的文件夹名称，filename.jpg为保存的图片名称，可用户自定义。
 
       >![](doc/source/img/icon-note.gif) **说明：**   
@@ -136,7 +136,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     **./ascendcamera -v -c  _1_   -t  _60_ **--fps  _20_**  -w  _704_  -h  _576_  -s  _192.168.1.223_:7002/**_**presenter\_view\_app\_name**_
 
     -   -v：代表获取摄像头的视频，用来在Presenter Server端展示。
-    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://www.huawei.com/minisite/ascend/cn/filedetail_2.html)中的“常用操作 > 如何查询摄像头所属Channel”。
+    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://ascend.huawei.com/documentation)中的“如何查询摄像头所属Channel”。
     -   -t：表示获取60s的视频文件，如果不指定此参数，则获取视频文件直至程序退出。
     -   --fps：表示存储视频的帧率，取值范围为1\~20，如果不设置此参数，则默认存储的视频帧率为10fps。
     -   -w：表示存储视频的宽。
