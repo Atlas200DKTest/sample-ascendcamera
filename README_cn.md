@@ -15,7 +15,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
 1.  获取源码包。
 
-    将[https://github.com/Ascend/sample-ascendcamera](https://github.com/Ascend/sample-ascendcamera)仓中的代码以MindSpore Studio安装用户下载至MindSpore Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_/home/ascend/sample-ascendcamera_。
+    将[https://gitee.com/Atlas200DK/sample-ascendcamera](https://gitee.com/Atlas200DK/sample-ascendcamera)仓中的代码以MindSpore Studio安装用户下载至MindSpore Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_/home/ascend/sample-ascendcamera_。
 
 2.  以MindSpore Studio安装用户登录MindSpore Studio所在Ubuntu服务器，并设置环境变量DDK\_HOME。
 
@@ -189,7 +189,7 @@ ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_se
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167333823_p7177153115317"><a name="zh-cn_topic_0167333823_p7177153115317"></a><a name="zh-cn_topic_0167333823_p7177153115317"></a>对DVPP接口进行了封装，提供对图片/视频的处理能力。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p31774315318"><a name="zh-cn_topic_0167333823_p31774315318"></a><a name="zh-cn_topic_0167333823_p31774315318"></a><a href="https://github.com/Ascend/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-ezdvpp</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p31774315318"><a name="zh-cn_topic_0167333823_p31774315318"></a><a name="zh-cn_topic_0167333823_p31774315318"></a><a href="https://gitee.com/Atlas200DK/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-ezdvpp</a></p>
 <p id="zh-cn_topic_0167333823_p1634523015710"><a name="zh-cn_topic_0167333823_p1634523015710"></a><a name="zh-cn_topic_0167333823_p1634523015710"></a>下载后请保持文件夹名称为ezdvpp。</p>
 </td>
 </tr>
@@ -197,7 +197,7 @@ ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_se
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167333823_p19431399359"><a name="zh-cn_topic_0167333823_p19431399359"></a><a name="zh-cn_topic_0167333823_p19431399359"></a>与Presenter Server进行交互的API接口。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p16684144715560"><a name="zh-cn_topic_0167333823_p16684144715560"></a><a name="zh-cn_topic_0167333823_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p16684144715560"><a name="zh-cn_topic_0167333823_p16684144715560"></a><a name="zh-cn_topic_0167333823_p16684144715560"></a><a href="https://gitee.com/Atlas200DK/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-presenter/tree/master</a></p>
 <p id="zh-cn_topic_0167333823_p82315442578"><a name="zh-cn_topic_0167333823_p82315442578"></a><a name="zh-cn_topic_0167333823_p82315442578"></a>请获取此路径下的presenteragent文件夹，下载后请保持文件夹名称为<span class="filepath" id="zh-cn_topic_0167333823_filepath541722722118"><a name="zh-cn_topic_0167333823_filepath541722722118"></a><a name="zh-cn_topic_0167333823_filepath541722722118"></a>“presenteragent”</span>。</p>
 </td>
 </tr>
@@ -205,7 +205,7 @@ ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_se
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0167333823_p17486293261"><a name="zh-cn_topic_0167333823_p17486293261"></a><a name="zh-cn_topic_0167333823_p17486293261"></a>显示Presenter Agent推送的结果，可以通过浏览器访问。</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p18748529102619"><a name="zh-cn_topic_0167333823_p18748529102619"></a><a name="zh-cn_topic_0167333823_p18748529102619"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0167333823_p18748529102619"><a name="zh-cn_topic_0167333823_p18748529102619"></a><a name="zh-cn_topic_0167333823_p18748529102619"></a><a href="https://gitee.com/Atlas200DK/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-presenter/tree/master</a></p>
 <p id="zh-cn_topic_0167333823_p14457641112711"><a name="zh-cn_topic_0167333823_p14457641112711"></a><a name="zh-cn_topic_0167333823_p14457641112711"></a>请获取此路径下的presenterserver文件夹，下载后请保持文件夹名称为 <span class="filepath" id="zh-cn_topic_0167333823_filepath7457144115272"><a name="zh-cn_topic_0167333823_filepath7457144115272"></a><a name="zh-cn_topic_0167333823_filepath7457144115272"></a>“presenterserver”</span>.</p>
 </td>
 </tr>
