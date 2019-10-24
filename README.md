@@ -15,7 +15,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Obtain the source code package.
 
-    Download all the code in the sample-ascendcamera repository at  [https://github.com/Ascend/sample-ascendcamera](https://github.com/Ascend/sample-ascendcamera)  to any directory on Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user, for example,  _/home/ascend/sample-ascendcamera_.
+    Download all the code in the sample-ascendcamera repository at  [https://gitee.com/Atlas200DK/sample-ascendcamera](https://gitee.com/Atlas200DK/sample-ascendcamera)  to any directory on Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user, for example,  _/home/ascend/sample-ascendcamera_.
 
 2.  Log in to Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user and set the environment variable  **DDK\_HOME**.
 
@@ -187,7 +187,7 @@ Download the dependent software libraries to the **sample-ascendcamera/script** 
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0167333650_p52110611584"><a name="en-us_topic_0167333650_p52110611584"></a><a name="en-us_topic_0167333650_p52110611584"></a>Encapsulates the dvpp interface and provides image and video processing capabilities, such as color gamut conversion and image / video conversion</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p31774315318"><a name="en-us_topic_0167333650_p31774315318"></a><a name="en-us_topic_0167333650_p31774315318"></a><a href="https://github.com/Ascend/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-ezdvpp</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p31774315318"><a name="en-us_topic_0167333650_p31774315318"></a><a name="en-us_topic_0167333650_p31774315318"></a><a href="https://gitee.com/Atlas200DK/sdk-ezdvpp" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-ezdvpp</a></p>
 <p id="en-us_topic_0167333650_p1634523015710"><a name="en-us_topic_0167333650_p1634523015710"></a><a name="en-us_topic_0167333650_p1634523015710"></a>After the download, keep the folder name <span class="filepath" id="en-us_topic_0167333650_filepath1324864613582"><a name="en-us_topic_0167333650_filepath1324864613582"></a><a name="en-us_topic_0167333650_filepath1324864613582"></a><b>ezdvpp</b></span>。</p>
 </td>
 </tr>
@@ -195,7 +195,7 @@ Download the dependent software libraries to the **sample-ascendcamera/script** 
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0167333650_p19431399359"><a name="en-us_topic_0167333650_p19431399359"></a><a name="en-us_topic_0167333650_p19431399359"></a><span>API for interacting with the Presenter Server</span>.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://gitee.com/Atlas200DK/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-presenter/tree/master</a></p>
 <p id="en-us_topic_0167333650_p82315442578"><a name="en-us_topic_0167333650_p82315442578"></a><a name="en-us_topic_0167333650_p82315442578"></a>Obtain the presenteragent folder in this path, after the download, keep the folder name <span class="filepath" id="en-us_topic_0167333650_filepath19800155745817"><a name="en-us_topic_0167333650_filepath19800155745817"></a><a name="en-us_topic_0167333650_filepath19800155745817"></a><b>presenteragent</b></span>.</p>
 </td>
 </tr>
@@ -204,7 +204,7 @@ Download the dependent software libraries to the **sample-ascendcamera/script** 
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="en-us_topic_0167333650_p19431399359"><a name="en-us_topic_0167333650_p19431399359"></a><a name="en-us_topic_0167333650_p19431399359"></a><span></span>Display the reasoning result pushed by the Presenter Agent, which can be accessed through a browser.</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://github.com/Ascend/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://github.com/Ascend/sdk-presenter/tree/master</a></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="en-us_topic_0167333650_p16684144715560"><a name="en-us_topic_0167333650_p16684144715560"></a><a name="en-us_topic_0167333650_p16684144715560"></a><a href="https://gitee.com/Atlas200DK/sdk-presenter/tree/master" target="_blank" rel="noopener noreferrer">https://gitee.com/Atlas200DK/sdk-presenter/tree/master</a></p>
 <p id="en-us_topic_0167333650_p82315442578"><a name="en-us_topic_0167333650_p82315442578"></a><a name="en-us_topic_0167333650_p82315442578"></a>Obtain the presenterserver folder in this path, after the download, keep the folder name <span class="filepath" id="en-us_topic_0167333650_filepath19800155745817"><a name="en-us_topic_0167333650_filepath19800155745817"></a><a name="en-us_topic_0167333650_filepath19800155745817"></a><b>presenterserver</b></span>.</p>
 </td>
 </tr>
