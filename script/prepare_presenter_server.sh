@@ -58,7 +58,7 @@ function download_code()
         fi
     fi
     echo "Download presenterserver code..."
-    presenterserver_download_url="https://github.com/Ascend/sdk-presenter/releases/download/${presenterserver_version}/presenterserver-${presenterserver_version}.zip"
+    presenterserver_download_url="https://gitee.com/Atlas200DK/sdk-presenter/repository/archive/1.1.2?format=zip"
     wget -O ${script_path}/presenterserver-${presenterserver_version}.ing ${presenterserver_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${presenterserver_download_url} connection."
@@ -71,8 +71,10 @@ function download_code()
         echo "ERROR: uncompress presenterserver tar.gz file failed, please check ${presenterserver_download_url} connection."
         return 1
     fi
-    mv ${script_path}/presenterserver-${presenterserver_version} ${script_path}/presenterserver
+    mkdir ${script_path}/presenterserver
+    cp -rf  ${script_path}/sdk-presenter/presenterserver/* ${script_path}/presenteragent
     rm -rf ${script_path}/presenterserver-${presenterserver_version}.zip
+    rm -rf ${script_path}/sdk-presenter
     rm -rf ${script_path}/presenterserver-${presenterserver_version}.ing
     return 0
 
