@@ -1,0 +1,75 @@
+2019-10-24 21:39:56,320-INFO-display_server.py:214 presenter server is starting...
+2019-10-24 21:39:56,320-INFO-presenter_server.py:79 presenter server starting, type: display
+2019-10-24 21:44:08,272-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:34230, fd:10
+2019-10-24 21:44:08,273-ERROR-presenter_socket_server.py:354 channel name ly1 is not exist.
+2019-10-24 21:44:08,273-INFO-channel_manager.py:216 register channel: ly1
+2019-10-24 21:44:08,273-INFO-channel_handler.py:216 create videothread-ly1...
+2019-10-24 21:44:08,274-INFO-channel_manager.py:127 create channel resource, channel_name:ly1, channel_fd:10, media_type:video
+2019-10-24 21:44:08,318-ERROR-presenter_socket_server.py:142 socket 10 receive msg head null
+2019-10-24 21:44:08,318-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2019-10-24 21:44:08,318-INFO-display_server.py:61 clean fd:10, conns:{10: <socket.socket fd=10, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.134', 7002), raddr=('192.168.1.2', 34230)>}
+2019-10-24 21:44:08,319-INFO-channel_handler.py:124 videothread-ly1 set _close_thread_switch True
+2019-10-24 21:44:08,319-INFO-channel_manager.py:139 clean channel: ly1's resource
+2019-10-24 21:44:08,319-INFO-channel_handler.py:227 Stop thread:videothread-ly1.
+2019-10-24 21:45:08,334-INFO-channel_manager.py:227 unregister channel: ly1
+2019-10-24 21:45:08,334-INFO-web.py:163 delete channel ly1 succeed
+2019-10-24 21:45:14,925-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:34234, fd:16
+2019-10-24 21:45:14,926-ERROR-presenter_socket_server.py:354 channel name ly1 is not exist.
+2019-10-24 21:45:14,926-INFO-channel_manager.py:216 register channel: ly1
+2019-10-24 21:45:14,926-INFO-channel_handler.py:216 create videothread-ly1...
+2019-10-24 21:45:14,926-INFO-channel_manager.py:127 create channel resource, channel_name:ly1, channel_fd:16, media_type:video
+2019-10-24 21:45:14,971-ERROR-presenter_socket_server.py:142 socket 16 receive msg head null
+2019-10-24 21:45:14,972-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2019-10-24 21:45:14,972-INFO-display_server.py:61 clean fd:16, conns:{16: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.134', 7002), raddr=('192.168.1.2', 34234)>}
+2019-10-24 21:45:14,972-INFO-channel_handler.py:124 videothread-ly1 set _close_thread_switch True
+2019-10-24 21:45:14,972-INFO-channel_manager.py:139 clean channel: ly1's resource
+2019-10-24 21:45:14,972-INFO-channel_handler.py:227 Stop thread:videothread-ly1.
+2019-10-24 21:46:47,950-INFO-channel_manager.py:227 unregister channel: ly1
+2019-10-24 21:46:47,950-INFO-web.py:163 delete channel ly1 succeed
+2019-10-24 21:47:08,100-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:34238, fd:16
+2019-10-24 21:47:08,100-ERROR-presenter_socket_server.py:354 channel name 123456 is not exist.
+2019-10-24 21:47:08,101-INFO-channel_manager.py:216 register channel: 123456
+2019-10-24 21:47:08,101-INFO-channel_handler.py:216 create videothread-123456...
+2019-10-24 21:47:08,101-INFO-channel_manager.py:127 create channel resource, channel_name:123456, channel_fd:16, media_type:video
+2019-10-24 21:47:08,151-ERROR-presenter_socket_server.py:142 socket 16 receive msg head null
+2019-10-24 21:47:08,151-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2019-10-24 21:47:08,151-INFO-display_server.py:61 clean fd:16, conns:{16: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.134', 7002), raddr=('192.168.1.2', 34238)>}
+2019-10-24 21:47:08,151-INFO-channel_handler.py:124 videothread-123456 set _close_thread_switch True
+2019-10-24 21:47:08,152-INFO-channel_manager.py:139 clean channel: 123456's resource
+2019-10-24 21:47:08,152-INFO-channel_handler.py:227 Stop thread:videothread-123456.
+2019-10-24 21:47:36,798-INFO-channel_manager.py:227 unregister channel: 123456
+2019-10-24 21:47:36,798-INFO-web.py:163 delete channel 123456 succeed
+2019-10-24 21:47:46,761-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:34242, fd:16
+2019-10-24 21:47:46,761-ERROR-presenter_socket_server.py:354 channel name 123456 is not exist.
+2019-10-24 21:47:46,761-INFO-channel_manager.py:216 register channel: 123456
+2019-10-24 21:47:46,762-INFO-channel_handler.py:216 create videothread-123456...
+2019-10-24 21:47:46,762-INFO-channel_manager.py:127 create channel resource, channel_name:123456, channel_fd:16, media_type:video
+2019-10-24 21:48:01,541-INFO-channel_handler.py:124 videothread-123456 set _close_thread_switch True
+2019-10-24 21:48:01,542-INFO-channel_manager.py:139 clean channel: 123456's resource
+2019-10-24 21:48:01,542-INFO-channel_manager.py:227 unregister channel: 123456
+2019-10-24 21:48:01,542-INFO-web.py:163 delete channel 123456 succeed
+2019-10-24 21:48:01,542-INFO-channel_handler.py:227 Stop thread:videothread-123456.
+2019-10-24 21:48:01,571-ERROR-display_server.py:176 get channel handler failed
+2019-10-24 21:48:01,571-ERROR-display_server.py:137 Present data not known error.
+2019-10-24 21:48:01,571-INFO-display_server.py:61 clean fd:16, conns:{16: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.134', 7002), raddr=('192.168.1.2', 34242)>}
+2019-10-24 21:48:03,269-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:34252, fd:16
+2019-10-24 21:48:03,270-ERROR-presenter_socket_server.py:354 channel name 123456 is not exist.
+2019-10-24 21:48:03,270-INFO-channel_manager.py:216 register channel: 123456
+2019-10-24 21:48:03,270-INFO-channel_handler.py:216 create videothread-123456...
+2019-10-24 21:48:03,270-INFO-channel_manager.py:127 create channel resource, channel_name:123456, channel_fd:16, media_type:video
+2019-10-24 21:49:05,308-ERROR-presenter_socket_server.py:142 socket 16 receive msg head null
+2019-10-24 21:49:05,308-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2019-10-24 21:49:05,308-INFO-display_server.py:61 clean fd:16, conns:{16: <socket.socket fd=16, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.134', 7002), raddr=('192.168.1.2', 34252)>}
+2019-10-24 21:49:05,308-INFO-channel_handler.py:124 videothread-123456 set _close_thread_switch True
+2019-10-24 21:49:05,309-INFO-channel_manager.py:139 clean channel: 123456's resource
+2019-10-24 21:49:05,309-INFO-channel_handler.py:227 Stop thread:videothread-123456.
+2019-10-24 21:49:25,021-INFO-channel_manager.py:227 unregister channel: 123456
+2019-10-24 21:49:25,021-INFO-web.py:163 delete channel 123456 succeed
+2019-10-24 23:29:39,347-INFO-presenter_server.py:90 receive signal, signum:15, frame:<frame object at 0x2f977c8>
+2019-10-24 23:29:39,348-INFO-presenter_server.py:93 presenter server exit by Ctrl + c
+2019-10-24 23:29:39,487-INFO-presenter_socket_server.py:295 conns:{}
+2019-10-24 23:29:39,487-INFO-presenter_socket_server.py:296 presenter server listen thread exit.
+2019-10-25 00:46:29,263-INFO-display_server.py:214 presenter server is starting...
+2019-10-25 00:46:29,264-INFO-presenter_server.py:79 presenter server starting, type: display
+2019-10-25 02:53:46,626-INFO-presenter_server.py:90 receive signal, signum:15, frame:<frame object at 0x1b82778>
+2019-10-25 02:53:46,627-INFO-presenter_server.py:93 presenter server exit by Ctrl + c
