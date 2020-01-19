@@ -15,7 +15,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
 1.  <a name="zh-cn_topic_0203223312_li953280133816"></a>获取源码包。
 
-    将[https://gitee.com/Atlas200DK/sample-ascendcamera/tree/1.3x.0.0/](https://gitee.com/Atlas200DK/sample-ascendcamera/tree/1.3x.0.0/)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_$HOME/sample-ascendcamera_。
+    将[https://gitee.com/Atlas200DK/sample-ascendcamera/tree/1.3x.0.0/](https://gitee.com/Atlas200DK/sample-ascendcamera/tree/1.3x.0.0/)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/sample-ascendcamera。
 
 2.  以Mind Studio安装用户登录Mind Studio所在Ubuntu服务器，确定当前使用的DDK版本号并设置环境变量DDK\_HOME，tools\_version，NPU\_DEVICE\_LIB和LD\_LIBRARY\_PATH。
     1.  <a name="zh-cn_topic_0203223312_zh-cn_topic_0203223294_li61417158198"></a>查询当前使用的DDK版本号。
@@ -51,7 +51,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
         **export tools\_version=_1.31.X.X_**
 
-        **export DDK\_HOME=$HOME/.mindstudio/huawei/ddk/_1.31.X.X_/ddk**
+        **export DDK\_HOME=\\$HOME/.mindstudio/huawei/ddk/\\$tools\_version/ddk**
 
         **export NPU\_DEVICE\_LIB=$DDK\_HOME/../RC/host-aarch64\_Ubuntu16.04.3/lib**
 
