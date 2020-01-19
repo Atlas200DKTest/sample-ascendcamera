@@ -15,7 +15,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
 1.  获取源码包。
 
-    将[https://gitee.com/Atlas200DK/sample-ascendcamera](https://gitee.com/Atlas200DK/sample-ascendcamera)仓中的代码以MindSpore Studio安装用户下载至MindSpore Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：_/home/ascend/sample-ascendcamera_。
+    将[https://gitee.com/Atlas200DK/sample-ascendcamera](https://gitee.com/Atlas200DK/sample-ascendcamera)仓中的代码以MindSpore Studio安装用户下载至MindSpore Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/sample-ascendcamera。
 
 2.  以MindSpore Studio安装用户登录MindSpore Studio所在Ubuntu服务器，并设置环境变量DDK\_HOME。
 
@@ -23,12 +23,11 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
     执行如下命令在最后一行添加DDK\_HOME及LD\_LIBRARY\_PATH的环境变量。
 
-    **export DDK\_HOME=/home/XXX/tools/che/ddk/ddk**
+    **export DDK\_HOME=$HOME/tools/che/ddk/ddk**
 
     **export LD\_LIBRARY\_PATH=$DDK\_HOME/uihost/lib**
 
-    >![](doc/source/img/icon-note.gif) **说明：**   
-    >-   XXX为MindSpore Studio安装用户，/home/XXX/tools为DDK默认安装路径。  
+    >![](doc/source/img/icon-note.gif) **说明：**    
     >-   如果此环境变量已经添加，则此步骤可跳过。  
 
     输入:wq!保存退出。
@@ -40,7 +39,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
 ## 部署<a name="zh-cn_topic_0167333823_section11947911019"></a>
 
-1.  以MindSpore Studio安装用户进入ascendcamera应用代码所在根目录，如“/home/ascend/sample-ascendcamera“。
+1.  以MindSpore Studio安装用户进入ascendcamera应用代码所在根目录，如“$HOME/sample-ascendcamera“。
 2.  执行部署脚本，进行工程环境准备，包括ascenddk公共库的编译与部署、网络模型的下载、Presenter Server服务器的配置等操作，其中Presenter Server用于接收Application发送过来的数据并通过浏览器进行结果展示。
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
