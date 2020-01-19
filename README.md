@@ -15,7 +15,7 @@ Before running the application, obtain the source code package and configure the
 
 1.  Obtain the source code package.
 
-    Download all the code in the sample-ascendcamera repository at  [https://gitee.com/Atlas200DK/sample-ascendcamera](https://gitee.com/Atlas200DK/sample-ascendcamera)  to any directory on Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user, for example,  _/home/ascend/sample-ascendcamera_.
+    Download all the code in the sample-ascendcamera repository at  [https://gitee.com/Atlas200DK/sample-ascendcamera](https://gitee.com/Atlas200DK/sample-ascendcamera)  to any directory on Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user, for example,  $HOME/sample-ascendcamera.
 
 2.  Log in to Ubuntu Server where MindSpore Studio is located as the MindSpore Studio installation user and set the environment variable  **DDK\_HOME**.
 
@@ -23,12 +23,11 @@ Before running the application, obtain the source code package and configure the
 
     Run the following commands to add the environment variables  **DDK\_HOME**  and  **LD\_LIBRARY\_PATH**  to the last line:
 
-    **export DDK\_HOME=/home/XXX/tools/che/ddk/ddk**
+    **export DDK\_HOME=$HOME/tools/che/ddk/ddk**
 
     **export LD\_LIBRARY\_PATH=$DDK\_HOME/uihost/lib**
 
     >![](doc/source/img/icon-note.gif) **NOTE:**   
-    >-   **XXX**  indicates the MindSpore Studio installation user, and  **/home/XXX/tools**  indicates the default installation path of the DDK.  
     >-   If the environment variables have been added, skip this step.  
 
     Enter  **:wq!**  to save and exit.
@@ -40,7 +39,7 @@ Before running the application, obtain the source code package and configure the
 
 ## Deployment<a name="en-us_topic_0167333650_section1378112174282"></a>
 
-1.  Log in to the root directory of the Ascend camera application code as the MindSpore Studio installation user, for example,  _**/home/ascend/sample-ascendcamera**_.
+1.  Log in to the root directory of the Ascend camera application code as the MindSpore Studio installation user, for example,  **$HOME/sample-ascendcamera**.
 2.  Run the deployment script to prepare the project environment, including compiling and deploying the ascenddk public library, downloading the network model, and configuring Presenter Server. The Presenter Server is used to receive the data sent by the application and display the result through the browser.
 
     **bash deploy.sh** _host\_ip_ _model\_mode_
