@@ -31,14 +31,14 @@
  * ============================================================================
  */
 
-#include "ascenddk/ascendcamera/camera.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 #include <iostream>
-#include "ascenddk/ascendcamera/ascend_camera_common.h"
+
+#include "camera.h"
+#include "ascend_camera_common.h"
 
 using namespace std;
 
@@ -90,6 +90,7 @@ int Camera::InitCamera() {
                   camera_instance_para_.channel_id, camera_instance_para_.fps);
     return kCameraSetFpsError;
   }
+  printf("Set fps %d\n", camera_instance_para_.fps);
 
   // set image format
   ret = SetCameraProperty(camera_instance_para_.channel_id,
@@ -146,6 +147,11 @@ int Camera::CaptureCameraInfo(CameraOutputPara *output_para) {
     output_para->channel_id = camera_instance_para_.channel_id;
     output_para->resolution = camera_instance_para_.resolution;
     result = kCameraRunOk;
+
+    static int g = 0;
+    printf("read camera %d\n", g);
+    g++;
+
   } else {  // failed to read a frame data from camera
     CameraStatus status = QueryCameraStatus(camera_instance_para_.channel_id);
     ASC_LOG_ERROR("Camera[%d] get image failed status is %d.",

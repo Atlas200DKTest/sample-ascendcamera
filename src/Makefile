@@ -12,12 +12,12 @@ LOCAL_MODULE_NAME := ascendcamera
 CC_FLAGS := -std=c++11 -Wall
 
 local_src_files := \
-	$(LOCAL_DIR)/src/ascenddk/ascendcamera/main.cpp \
-	$(LOCAL_DIR)/src/ascenddk/ascendcamera/camera.cpp \
-	$(LOCAL_DIR)/src/ascenddk/ascendcamera/output_info_process.cpp \
-	$(LOCAL_DIR)/src/ascenddk/ascendcamera/main_process.cpp \
-	$(LOCAL_DIR)/src/ascenddk/ascendcamera/parameter_utils.cpp \
-	$(LOCAL_DIR)/src/ascenddk/ascendcamera/ascend_camera_parameter.cpp
+	$(LOCAL_DIR)/main.cpp \
+	$(LOCAL_DIR)/camera.cpp \
+	$(LOCAL_DIR)/output_info_process.cpp \
+	$(LOCAL_DIR)/main_process.cpp \
+	$(LOCAL_DIR)/parameter_utils.cpp \
+	$(LOCAL_DIR)/ascend_camera_parameter.cpp
 
 local_inc_dirs := \
 	$(LOCAL_DIR)/include \
@@ -30,12 +30,49 @@ local_inc_dirs := \
 
 local_shared_libs := \
 	c_sec \
-	matrixdaemon \
 	pthread \
+	drvhdc \
+	drvdevdrv \
+	ome \
+	profilerclient \
+	slog \
+	hiai_server \
+	memory \
+	drvaicpu \
+	crypto \
+	fmk_common \
+	fusionengine \
+	cce \
+	runtime \
+	graph \
+	idedaemon \
+	aicpu_engine \
+	drvtcp \
+	cce_aicpudev \
+	cce_aicore \
+	tiling \
+	devmm \
+	ssl \
+	teec \
+	matrixdaemon \
+ 	mmpa \
+ 	pthread \
+ 	dl \
+ 	rt \
+ 	hiai_common \
 	protobuf \
 	media_mini \
+	Dvpp_api \
+	Dvpp_jpeg_decoder \
+	Dvpp_jpeg_encoder \
+	Dvpp_vpc \
+	OMX_hisi_video_decoder \
+	OMX_hisi_video_encoder \
+	Dvpp_png_decoder \
 	ascend_ezdvpp \
-	presenteragent
+	presenteragent 
+ 
+
 
 #Q := @
 FULL_SRC_FILES        := $(local_src_files)
@@ -51,12 +88,10 @@ FULL_CPP_OBJS         := $(patsubst $(LOCAL_DIR)/%.cpp,$(LOCAL_OBJ_PATH)/%.o, $(
 #host and device runing side is the same in atlas dk 200
 #ascendcamera only support atlas 200
 LNK_FLAGS := \
-        -Wl,-rpath-link=$(DDK_HOME)/host/lib \
-	-Wl,-rpath-link=$(DDK_HOME)/device/lib/ \
-	-L$(DDK_HOME)/device/lib \
-	-L$(HOME)/ascend_ddk/device/lib \
+        -L$(NPU_DEVICE_LIB) \
+		-L$(HOME)/ascend_ddk/device/lib \
         -L$(HOME)/ascend_ddk/host/lib \
-	$(SHARED_LIBRARIES)
+	    $(SHARED_LIBRARIES)
 
 all: do_pre_build do_build
 

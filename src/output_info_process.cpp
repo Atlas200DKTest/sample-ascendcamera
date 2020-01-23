@@ -31,7 +31,7 @@
  * ============================================================================
  */
 
-#include "ascenddk/ascendcamera/output_info_process.h"
+
 
 #include <fcntl.h>
 #include <sys/types.h>
@@ -42,7 +42,8 @@
 
 #include <iostream>
 
-#include "ascenddk/ascendcamera/ascend_camera_common.h"
+#include "ascend_camera_common.h"
+#include "output_info_process.h"
 
 using namespace std;
 
@@ -162,6 +163,10 @@ int OutputInfoProcess::OutputToLocal(unsigned char *buf, int size) {
     fclose(file_desc_);
     return kOutputWriteFileFail;
   }
+
+  static int cnt = 1;
+  printf("%d:write h264 frame to file, size %d\n", cnt, size);
+  cnt++;
 
   return kOutputOk;
 }

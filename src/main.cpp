@@ -31,8 +31,8 @@
  * ============================================================================
  */
 
-#include "ascenddk/ascendcamera/main_process.h"
-#include "ascenddk/ascendcamera/ascend_camera_common.h"
+#include "main_process.h"
+#include "ascend_camera_common.h"
 
 int main(int argc, char *argv[]) {
   int ret = ascend::ascendcamera::kMainProcessOk;

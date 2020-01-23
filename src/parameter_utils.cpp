@@ -31,7 +31,7 @@
  * ============================================================================
  */
 
-#include "ascenddk/ascendcamera/parameter_utils.h"
+
 
 #include <dirent.h>
 #include <unistd.h>
@@ -41,7 +41,8 @@
 #include <regex>
 #include <iostream>
 
-#include "ascenddk/ascendcamera/ascend_camera_common.h"
+#include "ascend_camera_common.h"
+#include "parameter_utils.h"
 
 using namespace std;
 
@@ -51,6 +52,9 @@ const unsigned int kMaxFileNameLength = 255;
 
 // regex for verify .jpg file name
 const string kRegexJpgFile = "-|(^.+\\.(jpg)$)";
+
+// regex for verify .h264 file name
+const string kRegexH264File = "-|(^.+\\.(h264)$)";
 
 // success to remove file
 const int kRemoveSuccess = 0;
@@ -255,13 +259,20 @@ const bool ParameterUtils::VerifyFileName(const bool is_image,
       return false;
     }
   } else {  // verify file name when media type is video
-    string cerr_info = "The ascendcamera has parameter -v,";
-    cerr_info += " does not support -o parameter in the same time.";
+    regex regex_h264(kRegexH264File.c_str());
 
-    cerr << "[ERROR] " << cerr_info << endl;
-    ASC_LOG_ERROR("%s", cerr_info.c_str());
+    // check video file name is match regex expression
+    if (!regex_match(file_name, regex_h264)) {
+      string cerr_info = "The ascendcamera parameter -o value:";
+      cerr_info += output_file;
+      cerr_info += " should be '-' or a valid file name end with"
+          " '.h264'.";
 
-    return false;
+      cerr << "[ERROR] " << cerr_info << endl;
+      ASC_LOG_ERROR("%s", cerr_info.c_str());
+
+      return false;
+    }
   }
 
   return true;

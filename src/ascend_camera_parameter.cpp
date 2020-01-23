@@ -31,7 +31,7 @@
  * ============================================================================
  */
 
-#include "ascenddk/ascendcamera/ascend_camera_parameter.h"
+
 
 #include <regex>
 #include <iostream>
@@ -40,7 +40,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "ascenddk/ascendcamera/ascend_camera_common.h"
+#include "ascend_camera_common.h"
+#include "ascend_camera_parameter.h"
 
 using namespace std;
 
@@ -645,15 +646,6 @@ bool AscendCameraParameter::VerifyMediaType() const {
     return false;
   }
 
-  if (is_video_ && output_presenter_.empty()) {
-    cerr << "[ERROR] The ascendcamera has -v parameter, "
-         << "should input -s parameter." << endl;
-    ASC_LOG_ERROR(
-        "The ascendcamera has -v parameter, should input -s parameter.");
-
-    return false;
-  }
-
   return true;
 }
 
@@ -919,7 +911,7 @@ void AscendCameraParameter::DisplayHelpInfo() const {
       "  --help\t:display this information\n"
       "  -c\t\t:camera channel, value range:0 1, default value:0\n"
       "  -i\t\t:obtain jpg format image\n"
-      "  -v\t\t:obtain video, parameters -i and -v must "
+      "  -v\t\t:obtain h264 format video, parameters -i and -v must "
       "be set only one of them\n"
       "  -w, --width\t:image width\n"
       "  -h, --height\t:image height\n"
@@ -933,7 +925,7 @@ void AscendCameraParameter::DisplayHelpInfo() const {
       "channelname support number letter and '/', length value range:1~25\n"
       "  -o\t\t:output image or video to stdout or a file\n"
       "    \t\t -o -, output image or video to stdout\n"
-      "    \t\t -o file, output image or video to a file(.jpg)\n"
+      "    \t\t -o file, output image or video to a file(.jpg or .h264)\n"
       "    \t\t parameters -o and -s must be set only one of them\n"
       "  --overwrite\t:overwrite the file when output image or video to"
       " an exist file \n"
@@ -948,10 +940,20 @@ void AscendCameraParameter::DisplayHelpInfo() const {
       "\n\tGet image from camera channel 1, image width equal to 352 and "
       "height equal to 288, output image to "
       "presenter:10.10.10.1:7006/channel1\n"
-      "\n\t(3)ascendcamera -v -c 1 --fps 20 -t 0 -w 704 -h 576 -s 10.10.10.1"
+      "\n\t(3)ascendcamera -v -c 0 --fps 15 -t 60 -w 1280 -h 720 -o "
+      "video.h264\n\tGet 60 second video from camera channel 0, image"
+      " width equal to 1280 and height equal to 720, fps equal to 15, save"
+      " video to video.h264\n"
+      "\n\t(4)ascendcamera -v -c 1 --fps 20 -t 0 -w 704 -h 576 -s 10.10.10.1"
       ":7006/channel2\n\tGet video from camera channel 1 until exits,"
       " image width equal to 704 and height equal to 576, fps equal to 20,"
-      " output image to presenter:10.10.10.1:7006/channel2\n";
+      " output image to presenter:10.10.10.1:7006/channel2\n"
+      "\n\t(5)ascendcamera -v -o - "
+      "| gst-launch-1.0 -e -v fdsrc ! \"video/x-h264,width=1280,height=720,"
+      "framerate=10/1\" ! h264parse ! flvmux ! tcpserversink host=10.10.10.2"
+      " port=5000\n\tGet video from camera and output video to stdout,"
+      " through gstreamer add video to pipe, video player can play video"
+      " from:10.10.10.2:5000";
 
   cerr << helpInfo << endl;
   ASC_LOG_INFO("Display help information on cerr.");

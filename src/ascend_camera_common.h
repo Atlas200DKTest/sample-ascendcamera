@@ -67,6 +67,7 @@ struct ErrorDescription {
   std::string code_info;
 };
 
+
 // has no write permission
 const int kHasNoAccessPermission = -1;
 
