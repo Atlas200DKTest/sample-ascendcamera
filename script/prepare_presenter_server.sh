@@ -58,7 +58,7 @@ function download_code()
         fi
     fi
     echo "Download presenterserver code..."
-    presenterserver_download_url="https://github.com/Atlas200DKTest/sdk-presenter/repository/archive/1.1.2?format=zip"
+    presenterserver_download_url="https://github.com/Atlas200DKTest/sdk-presenter/archive/1.1.2.zip"
     wget -O ${script_path}/presenterserver-${presenterserver_version}.ing ${presenterserver_download_url} --no-check-certificate
     if [[ $? -ne 0 ]];then
         echo "ERROR: download failed, please check ${presenterserver_download_url} connection."
