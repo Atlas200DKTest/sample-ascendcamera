@@ -8,7 +8,7 @@ app_path="${script_path}/../src"
 
 function check_param_configure()
 {
-	for i in `cat ${app_path}/param_configure.conf | awk -F'[ =]+' '{print $2}'`
+    for i in `cat ${app_path}/param_configure.conf | awk -F'[ =]+' '{print $2}'`
     do
         if [[ ${i} = "" ]];then
             echo "please check your param_configure.conf to make sure that each parameter has a value"
@@ -26,7 +26,14 @@ function check_param_configure()
 
 function build_common()
 {
-	echo "build common lib..."
+    echo "build common lib..."
+    if [ ! -d "${HOME}/ascend_ddk" ];then
+        mkdir $HOME/ascend_ddk
+        if [[ $? -ne 0 ]];then
+            echo "ERROR: Execute mkdir command failed, Please check your environment"
+            return 1
+        fi
+    fi
     bash ${script_path}/build_ezdvpp.sh ${remote_host}
     if [ $? -ne 0 ];then
         echo "ERROR: Failed to deploy ezdvpp"
@@ -44,10 +51,10 @@ function build_common()
 
 function main()
 {
-	touch ${script_path}/../src/graph.config
-	[ $? -ne 0 ] && (echo "ERROR:touch graph.config failed";return 1)
+    touch ${script_path}/../src/graph.config
+    [ $? -ne 0 ] && (echo "ERROR:touch graph.config failed";return 1)
 	
-	echo "Modify param information in graph.config..."
+    echo "Modify param information in graph.config..."
     check_param_configure
     if [ $? -ne 0 ];then
         return 1
@@ -82,7 +89,7 @@ function main()
             echo "success" > ${script_path}/Tag
         fi
     fi
-	return 0
+    return 0
 }
 main
 
