@@ -84,7 +84,7 @@ Before running the application, obtain the source code package and configure the
 
     After successfully starting **Mind Studio**, open **sample-ascendcamera**** project，as shown in [Figure 2](#zh-cn_topic_0203223312_fig1696912234714)
 
-    **图 2**  Open **sample-camera** project<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
+    **Figure 2**  Open **sample-camera** project<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
     
 
     ![](figures/打开工程项目-摄像头.png)
@@ -143,7 +143,7 @@ Before running the application, obtain the source code package and configure the
 
     As shown in [Figure 6](#zh-cn_topic_0203223312_fig20890201582816), Select the IP address used by the browser to access the **Presenter Server** service in "Current environment valid ip list" and enter the path for storing video analysis data.
 
-    **图 6**  Project deployment<a name="zh-cn_topic_0203223312_fig20890201582816"></a>  
+    **Figure 6**  Project deployment<a name="zh-cn_topic_0203223312_fig20890201582816"></a>  
     
 
     ![](figures/ascend_camera_present_2.png)
@@ -162,7 +162,7 @@ Before running the application, obtain the source code package and configure the
 
     The following figure shows the IP address used by the **Presenter Server** and **Mind Studio** to communicate with the Atlas 200 DK.
 
-    **图 9**  Example IP Address<a name="zh-cn_topic_0203223312_fig633991291914"></a>  
+    **Figure 9**  Example IP Address<a name="zh-cn_topic_0203223312_fig633991291914"></a>  
     ![](figures/IP地址示例.png "Example IP Address")
 
     -   The IP address of the Atlas 200 DK developer board is 192.168.1.2 (connected in USB mode).
@@ -176,7 +176,7 @@ Run the Ascend Camera application.
 
 Find **Run** button in the toolbar of **Mind Studio** tool, click **Run \> Run 'sample-ascendcamera'**, run the program on the developer board, as shown in [Figure 10](#zh-cn_topic_0203223312_fig19482184244914).
 
-**图 10**  Program execution<a name="zh-cn_topic_0203223312_fig19482184244914"></a>  
+**Figure 10**  Program execution<a name="zh-cn_topic_0203223312_fig19482184244914"></a>  
 
 
 ![](figures/ascend_camera_run.png)
