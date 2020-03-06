@@ -1,3 +1,5 @@
+中文|[英文](Readme_en.md)
+
 # Ascendcamera<a name="ZH-CN_TOPIC_0208833163"></a>
 
 Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集数据，经过DVPP转换为jpg，最终保存为文件或者远程输出。
