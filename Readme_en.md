@@ -130,7 +130,7 @@ Before running the application, obtain the source code package and configure the
 
 4.  <a name="zh-cn_topic_0203223312_li043217442034"></a>Start Presenter Server.
 
-     Open **Terminal** of **Mind Studio** tool, it is in the path where code saved in [Step 1] by default(#zh-cn_topic_0203223312_li953280133816), run the following command to start the **Presenter Server** main program of the **Video Analysiscar**application, as shown in [Figure 5](#zh-cn_topic_0203223312_fig815812478221)所示。
+     Open **Terminal** of **Mind Studio** tool, it is in the path where code saved in [Step 1] by default(#zh-cn_topic_0203223312_li953280133816), run the following command to start the **Presenter Server** main program of the **Video Analysiscar**application, as shown in [Figure 5](#zh-cn_topic_0203223312_fig815812478221).
 
     **bash run\_present\_server.sh**
 
