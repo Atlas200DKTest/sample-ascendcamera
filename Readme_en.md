@@ -12,67 +12,17 @@ Before using an open source application, ensure that:
 -   Mind Studio has been installed. .
 -   The Atlas 200 DK developer board has been connected to Mind Studio, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured. 
 
-## Software Preparation<a name="zh-cn_topic_0203223312_section8534138124114"></a>
+## Deployment
+1. Deployment: choose either faster deployment or conventional deployment as shown below: 
 
-Before running the application, obtain the source code package and configure the environment as follows.
-
-1.  <a name="zh-cn_topic_0203223312_li953280133816"></a>Obtain the source code package.
-
-    Download all the code in the sample-ascendcamera repository at  [https://github.com/Atlas200DKTest/sample-ascendcamera/tree/1.3x.0.0/](https://github.com/Atlas200DKTest/sample-ascendcamera/tree/1.3x.0.0/) to any directory on Ubuntu Server where Mind Studio is located as the Mind Studio installation user, for example, **$HOME/sample-ascendcamera**.
-
-2.  Log in to Ubuntu Server where Mind Studio is located as the Mind Studio installation user, confirm current DDK version and set the  environment variable  **DDK\_HOME**, **tools\_version**, **NPU\_DEVICE\_LIB** and **LD\_LIBRARY\_PATH**.
-
-    1.  <a name="zh-cn_topic_0203223312_zh-cn_topic_0203223294_li61417158198"></a>Find current DDK version number.
-        
-        Current DDK version number can be obtained by either Mind studio tool or DDK packages.
-        
-        -   Using Mind studio tool.
-
-            choose **File \> Settings \> System Settings \> Ascend DDK** from the main menu of **Mind Studio**, DDK version inquiry page will display as [Figure 1](zh-cn_topic_0203223294.md#fig94023140222).
-
-            **Figure 1**  DDK version inquiry page<a name="zh-cn_topic_0203223312_zh-cn_topic_0203223294_fig17553193319118"></a>  
-            ![](figures/DDK版本号查询.png "DDK version inquiry page")
-
-            **DDK Version** shows in this page is current DDK version, for example, **1.31.T15.B150**.
-
-        -   Using DDK package.
-
-            Obtain DDK version by installed DDK package name.
-             
-            The format of DDK package name is: **Ascend\_DDK-\{software version}-\{interface version}-x86\_64.ubuntu16.04.tar.gz**
-             
-            Where **software version** represents the DDK version.
-             
-            For example:
-             
-            If the name of DDK package is **Ascend\_DDK-1.31.T15.B150-1.1.1-x86\_64.ubuntu16.04.tar.gz**, the DDK version would be **1.31.T15.B150**.
-
-    2.  Set the environment variable.
-
-        **vim \~/.bashrc**
-
-        Run the following commands to add the environment variables  **DDK\_HOME**  and  **LD\_LIBRARY\_PATH**  to the last line:
-
-        **export tools\_version=_1.31.X.X_**
-
-        **export DDK\_HOME=\\$HOME/.mindstudio/huawei/ddk/\\$tools\_version/ddk**
-
-        **export NPU\_DEVICE\_LIB=$DDK\_HOME/../RC/host-aarch64\_Ubuntu16.04.3/lib**
-
-        **export LD\_LIBRARY\_PATH=$DDK\_HOME/lib/x86\_64-linux-gcc5.4**
-
-        >![](public_sys-resources/icon-note.gif) **NOTE：**   
-        >-  **_1.31.X.X_** is the DDK version obtained from [Figure 1](#zh-cn_topic_0203223312_zh-cn_topic_0203223294_li61417158198), it needs be filled according to the inquiry result，for example, **1.31.T15.B150**  
-        
-        >-    If the environment variables have been added, this step can be skipped.
-
-         Enter  **:wq!**  to save and exit.
-
-         Run the following command for the environment variable to take effect:
-         
-        **source \~/.bashrc**
-
-
+   1.1 Faster deployment, refer to https://gitee.com/Atlas200DK/faster-deploy .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This faster deployment script can quickly deploy multiple cases, select ascendcamera case for this project.
+    >-   This faster deployment automatically performs code download, model conversion and environment variable configuration. For details, choose conventional deployment method, as shown in 1.2.
+    
+   1.2 Conventional deployment, refer to : https://gitee.com/Atlas200DK/sample-README/tree/master/sample-ascendcamera  .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This deployment method requires manually performing code download, model conversion and environment variable configuration. A better understand of the deployment process can be obtained from this method.
 
 ## Compile<a name="zh-cn_topic_0203223312_section11947911019"></a>
 
@@ -82,16 +32,16 @@ Before running the application, obtain the source code package and configure the
     
     **./MindStudio.sh**
 
-    After successfully starting **Mind Studio**, open **sample-ascendcamera**** project，as shown in [Figure 2](#zh-cn_topic_0203223312_fig1696912234714)
+    After successfully starting **Mind Studio**, open **sample-ascendcamera**** project，as shown in [Figure 1](#zh-cn_topic_0203223312_fig1696912234714)
 
-    **Figure 2**  Open **sample-camera** project<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
+    **Figure 1**  Open **sample-camera** project<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
     
 
     ![](figures/打开工程项目-摄像头.png)
 
 2.  Configure related project information in the **src/param\_configure.conf**
 
-    **Figure 3**  Configuration file path<a name="zh-cn_topic_0203223312_fig10430135171116"></a>  
+    **Figure 2**  Configuration file path<a name="zh-cn_topic_0203223312_fig10430135171116"></a>  
     
 
     ![](figures/ascendcamera_src.png)
@@ -115,6 +65,17 @@ Before running the application, obtain the source code package and configure the
 
     >![](public_sys-resources/icon-note.gif) **NOTE：**   
     >Note that the "" symbol is no need to be used when filling in parameters.
+
+3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419).
+    
+    **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
+    
+    ![](figures/deploy_camera.png)
+    
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   Automatic download and compilation will perform if 3rd party libraries are not deployed for the first time of deployment. This process might take some time, please wait patiently. It will not download and compilation repeatedly when recompiling later, deployment is shown as above. 
+    >-   Select the HOST IP connected to the developer board when deploying, which is usually the IP of virtual network card. If this IP belongs to the same segment as the developer board IP, it will be selected automatically and deployed. Otherwise, manual entering the IP connected to developer board is required for deployment.
+
 
 3.  Begin to compile, open **Mind Studio** tool, click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 4](#zh-cn_topic_0203223312_fig5350165415161), **build** and **run** folders will be generated under the directory.
 
@@ -236,7 +197,7 @@ Find **Run** button in the toolbar of **Mind Studio** tool, click **Run \> Run '
     -   **--fps**: Indicates the frame rate of a saved video. The value range is 1\~20. The default video frame rate is 10 fps.
     -   **-w**: Indicates the width of a saved video.
     -   **-h**: Indicates the height of a saved video.
-    -   **_192.168.1.223_** behind **-s** is the IP address corresponding to the 7002 port in **Presenter Server** (the IP address used for communicating with the Atlas 200 DK developer board entered in as shown in [Step 4](#zh-cn_topic_0203223312_li043217442034)), The default port number of**Presenter Server** corresponding to the Ascendcamera application is 7002.
+    -   **_192.168.1.223_** behind **-s** is the IP address corresponding to the 7002 port in **Presenter Server** (the IP address used for communicating with the Atlas 200 DK developer board entered in as shown in [Step 5](#zh-cn_topic_0203223312_li043217442034)), The default port number of**Presenter Server** corresponding to the Ascendcamera application is 7002.
     -   **_presenter\_view\_app\_name_**：indicates  **View Name**  displayed on the **Presenter Server** page, which is user-defined. The value of this parameter must be unique on the **Presenter Server** page. It can only be a combination of uppercase and lowercase letters, numbers, and "_", with a digit of 3 \~20.   
 
     For other parameters, run the   **./workspace\_mind\_studio\_sample\_ascendcamera**  command or the **./workspace\_mind\_studio\_sample\_ascendcamera** **--help** command. For details, see the help information.
