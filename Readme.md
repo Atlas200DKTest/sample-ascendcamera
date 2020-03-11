@@ -11,64 +11,17 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 -   已完成Mind Studio的安装。
 -   已完成Atlas 200 DK开发者板与Mind Studio的连接，交叉编译器的安装，SD卡的制作及基本信息的配置等。
 
-## 软件准备<a name="zh-cn_topic_0203223312_section8534138124114"></a>
+## 部署
+1. 部署，可以选择如下快速部署或者常规方法部署，二选一即可；
 
-运行此Sample前，需要按照此章节获取源码包，并进行相关的环境配置。
-
-1.  <a name="zh-cn_topic_0203223312_li953280133816"></a>获取源码包。
-
-    将[https://github.com/Atlas200DKTest/sample-ascendcamera/tree/1.3x.0.0/](https://github.com/Atlas200DKTest/sample-ascendcamera/tree/1.3x.0.0/)仓中的代码以Mind Studio安装用户下载至Mind Studio所在Ubuntu服务器的任意目录，例如代码存放路径为：$HOME/sample-ascendcamera。
-
-2.  以Mind Studio安装用户登录Mind Studio所在Ubuntu服务器，确定当前使用的DDK版本号并设置环境变量DDK\_HOME，tools\_version，NPU\_DEVICE\_LIB和LD\_LIBRARY\_PATH。
-    1.  <a name="zh-cn_topic_0203223312_zh-cn_topic_0203223294_li61417158198"></a>查询当前使用的DDK版本号。
-
-        可通过Mind Studio工具查询，也可以通过DDK软件包进行获取。
-
-        -   使用Mind Studio工具查询。
-
-            在Mind Studio工程界面依次选择“File \> Settings \> System Settings \> Ascend DDK“，弹出如[图 DDK版本号查询](zh-cn_topic_0203223294.md#fig94023140222)所示界面。
-
-            **图 1**  DDK版本号查询<a name="zh-cn_topic_0203223312_zh-cn_topic_0203223294_fig17553193319118"></a>  
-            ![](figures/DDK版本号查询.png "DDK版本号查询")
-
-            其中显示的**DDK Version**就是当前使用的DDK版本号，如**1.31.T15.B150**。
-
-        -   通过DDK软件包进行查询。
-
-            通过安装的DDK的包名获取DDK的版本号。
-
-            DDK包的包名格式为：**Ascend\_DDK-\{software version\}-\{interface version\}-x86\_64.ubuntu16.04.tar.gz**
-
-            其中**software version**就是DDK的软件版本号。
-
-            例如：
-
-            DDK包的包名为Ascend\_DDK-1.31.T15.B150-1.1.1-x86\_64.ubuntu16.04.tar.gz，则此DDK的版本号为1.31.T15.B150。
-
-    2.  设置环境变量。
-
-        **vim \~/.bashrc**
-
-        执行如下命令在最后一行添加DDK\_HOME及LD\_LIBRARY\_PATH的环境变量。
-
-        **export tools\_version=_1.31.X.X_**
-
-        **export DDK\_HOME=\\$HOME/.mindstudio/huawei/ddk/\\$tools\_version/ddk**
-
-        **export NPU\_DEVICE\_LIB=$DDK\_HOME/../RC/host-aarch64\_Ubuntu16.04.3/lib**
-
-        **export LD\_LIBRARY\_PATH=$DDK\_HOME/lib/x86\_64-linux-gcc5.4**
-
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >-   **_1.31.X.X_**是[1](#zh-cn_topic_0203223312_zh-cn_topic_0203223294_li61417158198)中查询到的DDK版本号，需要根据查询结果对应填写，如**1.31.T15.B150**  
-        >-   如果此环境变量已经添加，则此步骤可跳过。  
-
-        输入:wq!保存退出。
-
-        执行如下命令使环境变量生效。
-
-        **source \~/.bashrc**
-
+   1.1 快速部署，请参考：https://gitee.com/Atlas200DK/faster-deploy 。
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >-   该快速部署脚本可以快速部署多个案例，请选择ascendcamera案例部署即可。 
+    >-   该快速部署脚本自动完成了代码下载、模型转换、环境变量配置等流程，如果需要了解详细的部署过程请选择常规部署方式，请转1.2 常规部署。
+    
+   1.2 常规部署，请参考：https://gitee.com/Atlas200DK/sample-README/tree/master/sample-ascendcamera  。
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >-   该部署方式，需要手动完成代码下载、模型转换、环境变量配置等过程。完成后，会对其中的过程会更加了解。
 
 
 ## 编译<a name="zh-cn_topic_0203223312_section11947911019"></a>
@@ -81,14 +34,14 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
 
     启动成功后，打开**sample-ascendcamera**工程，如图所示。
 
-    **图 2**  打开sample-camera工程<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
+    **图 1**  打开sample-camera工程<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
     
 
     ![](figures/打开工程项目-摄像头.png)
 
 2.  在**src/param\_configure.conf**文件中配置相关工程信息。
 
-    **图 3**  配置文件路径<a name="zh-cn_topic_0203223312_fig10430135171116"></a>  
+    **图 2**  配置文件路径<a name="zh-cn_topic_0203223312_fig10430135171116"></a>  
     
 
     ![](figures/ascendcamera_src.png)
@@ -112,7 +65,17 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >注意参数填写时不需要使用“”符号。  
 
-3.  开始编译，打开Mindstudio工具，在工具栏中点击**Build \> Build \> Build-Configuration**。如[图4](#zh-cn_topic_0203223312_fig5350165415161)所示，会在目录下生成build和run文件夹。
+3.  执行deploy脚本， 进行配置参数调整及第三方库下载编译 打开Mind Studio工具的Terminal，此时默认在代码主目录下，执行如下命令在后台指执行deploy脚本，进行环境部署。如[图 执行deploy脚本](#zh-cn_topic_0182554577_fig19292258105419)所示。
+    
+    **图 3**  执行deploy脚本<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
+    
+    ![](figures/deploy_camera.png))
+    
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >-   首次deploy时，没有部署第三方库时会自动下载并编译，耗时可能比较久，请耐心等待。后续再重新编译时，不会重复下载编译，部署如上图所示。
+    >-   deploy时，需要选择与开发板通信的主机侧ip，一般为虚拟网卡配置的ip。如果此ip和开发板ip属于同网段，则会自动选择并部署。如果非同网段，则需要手动输入与开发板通信的主机侧ip才能完成deploy。
+
+4.  开始编译，打开Mindstudio工具，在工具栏中点击**Build \> Build \> Build-Configuration**。如[图4](#zh-cn_topic_0203223312_fig5350165415161)所示，会在目录下生成build和run文件夹。
 
     **图 4**  编译操作及生成文件<a name="zh-cn_topic_0203223312_fig5350165415161"></a>  
     
@@ -123,7 +86,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     >首次编译工程时，**Build \> Build**为灰色不可点击状态。需要点击**Build \> Edit Build Configuration**，配置编译参数后再进行编译。  
     >![](figures/build_configuration.png)  
 
-4.  <a name="zh-cn_topic_0203223312_li043217442034"></a>启动Presenter Server。
+5.  <a name="zh-cn_topic_0203223312_li043217442034"></a>启动Presenter Server。
 
     打开Mindstudio工具的Terminal，此时默认在[步骤1](#zh-cn_topic_0203223312_li953280133816)中的代码存放路径下，执行如下命令在后台启动Ascend Camera应用的Presenter Server主程序。如[图5](#zh-cn_topic_0203223312_fig815812478221)所示。
 
@@ -231,7 +194,7 @@ Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集�
     -   --fps：表示存储视频的帧率，取值范围为1\~20，如果不设置此参数，则默认存储的视频帧率为10fps。
     -   -w：表示存储视频的宽。
     -   -h：表示存储视频的高。
-    -   -s后面的值_ 192.168.1.223_  为Presenter中7002端口对应的IP地址（如[步骤4](#zh-cn_topic_0203223312_li043217442034)中启动Presenter Server回显显示，即为与Atlas 200 DK开发者板通信的IP地址），7002为Ascendcamera应用对应的Presenter Server服务器的默认端口号。
+    -   -s后面的值_ 192.168.1.223_  为Presenter中7002端口对应的IP地址（如[步骤5](#zh-cn_topic_0203223312_li043217442034)中启动Presenter Server回显显示，即为与Atlas 200 DK开发者板通信的IP地址），7002为Ascendcamera应用对应的Presenter Server服务器的默认端口号。
     -   _presenter\_view\_app\_name_：为在Presenter Server端展示的“View Name“，用户自定义，需要保持唯一，只能为大小写字母、数字、“\_”的组合，位数3\~20。
 
     其他详细参数请执行  **./workspace\_mind\_studio\_sample\_ascendcamera**  命令或者**./workspace\_mind\_studio\_sample\_ascendcamera** **--help**命令参见帮助信息。
