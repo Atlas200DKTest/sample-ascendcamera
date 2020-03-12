@@ -1,4 +1,4 @@
-中文|[英文](Readme_en.md)
+CN|[EN](Readme_en.md)
 
 # Ascendcamera<a name="ZH-CN_TOPIC_0208833163"></a>
 
