@@ -1,214 +1,216 @@
-CN|[EN](Readme_en.md)
+EN|[CN](Readme_cn.md)
+
 
 # Ascendcamera<a name="ZH-CN_TOPIC_0208833163"></a>
 
-Ascendcamera主要功能是通过Atlas 200 DK开发者板上的摄像头采集数据，经过DVPP转换为jpg，最终保存为文件或者远程输出。
+Ascendcamera collects data through the camera on the Atlas 200 DK developer board, converts the data into JPG by using the digital vision pre-processing \(DVPP\) module, and saves the video streams as files or remote output.
 
-## 前提条件<a name="zh-cn_topic_0203223312_section137245294533"></a>
+## Prerequisites<a name="zh-cn_topic_0203223312_section137245294533"></a>
 
-部署此Sample前，需要准备好以下环境：
+Before using an open source application, ensure that:
 
--   已完成Mind Studio的安装。
--   已完成Atlas 200 DK开发者板与Mind Studio的连接，交叉编译器的安装，SD卡的制作及基本信息的配置等。
+-   Mind Studio has been installed. .
+-   The Atlas 200 DK developer board has been connected to Mind Studio, the cross compiler has been installed, the SD card has been prepared, and basic information has been configured. 
 
-## 部署
-1. 部署，可以选择如下快速部署或者常规方法部署，二选一即可；
+## Deployment
+1. Deployment: choose either faster deployment or conventional deployment as shown below: 
 
-   1.1 快速部署，请参考：https://github.com/Atlas200DKTest/faster-deploy.git 。
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   该快速部署脚本可以快速部署多个案例，请选择ascendcamera案例部署即可。 
-    >-   该快速部署脚本自动完成了代码下载、模型转换、环境变量配置等流程，如果需要了解详细的部署过程请选择常规部署方式，请转1.2 常规部署。
+   1.1 Faster deployment, refer to https://github.com/Atlas200dk/faster-deploy.git .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This faster deployment script can quickly deploy multiple cases, select ascendcamera case for this project.
+    >-   This faster deployment automatically performs code download, model conversion and environment variable configuration. For details, choose conventional deployment method, as shown in 1.2.
     
-   1.2 常规部署，请参考：https://github.com/Atlas200DKTest/sample-README/tree/master/sample-ascendcamera  。
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   该部署方式，需要手动完成代码下载、模型转换、环境变量配置等过程。完成后，会对其中的过程会更加了解。
+   1.2 Conventional deployment, refer to : https://github.com/Atlas200dk/sample-README/tree/master/sample-ascendcamera  .
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   This deployment method requires manually performing code download, model conversion and environment variable configuration. A better understand of the deployment process can be obtained from this method.
 
+## Compile<a name="zh-cn_topic_0203223312_section11947911019"></a>
 
-## 编译<a name="zh-cn_topic_0203223312_section11947911019"></a>
+1.  Open the corresponding project.
 
-1.  打开对应的工程。
-
-    以Mind Studio安装用户进入安装包解压后的“MindStudio-ubuntu/bin”目录，如$HOME/MindStudio-ubuntu/bin，执行如下命令启动Mind Studio。
-
+    Enter the “**MindStudio-ubuntu/bin**” directory after decompressing the installation package in the command line, for example, **$HOME/MindStudio-ubuntu/bin**. Run the following command to start **Mind Studio**:
+    
     **./MindStudio.sh**
 
-    启动成功后，打开**sample-ascendcamera**工程，如图所示。
+    After successfully starting **Mind Studio**, open **sample-ascendcamera**** project，as shown in [Figure 1](#zh-cn_topic_0203223312_fig1696912234714)
 
-    **图 1**  打开sample-camera工程<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
+    **Figure 1**  Open **sample-camera** project<a name="zh-cn_topic_0203223312_fig1696912234714"></a>  
     
 
     ![](figures/打开工程项目-摄像头.png)
 
-2.  在**src/param\_configure.conf**文件中配置相关工程信息。
+2.  Configure related project information in the **src/param\_configure.conf**
 
-    **图 2**  配置文件路径<a name="zh-cn_topic_0203223312_fig10430135171116"></a>  
+    **Figure 2**  Configuration file path<a name="zh-cn_topic_0203223312_fig10430135171116"></a>  
     
 
     ![](figures/ascendcamera_src.png)
 
-    该配置文件内容如下：
+    The configuration file is as follows:
 
     ```
     remote_host=
     ```
 
-    需要手动添加参数配置：
+    Following parameter configuration needs to be added manually：
 
-    -   remote\_host：配置为Atlas 200 DK开发者板的IP地址。
 
-    配置示例：
+    -   remote\_host：this parameter indicates the IP address of Atlas 200 DK developer board.
 
-    ```
-    remote_host=192.168.1.2
-    ```
+    An example of video file configuration is as follows:
+ 
+     ```
+     remote_host=192.168.1.2
+     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >注意参数填写时不需要使用“”符号。  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >Note that the "" symbol is no need to be used when filling in parameters.
 
-3.  执行deploy脚本， 进行配置参数调整及第三方库下载编译 打开Mind Studio工具的Terminal，此时默认在代码主目录下，执行如下命令在后台指执行deploy脚本，进行环境部署。如[图 执行deploy脚本](#zh-cn_topic_0182554577_fig19292258105419)所示。
+3.  Run the deployment script to adjust the configuration parameters, download and compile 3rd party libraries. Open the Terminal of **Mind Studio** tool, which is under the main code directory, run the following command to execute environment deployment in the backstage, as shown in [Figure 3](#zh-cn_topic_0182554577_fig19292258105419).
     
-    **图 3**  执行deploy脚本<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
+    **Figure 3**  Execute deployment script<a name="zh-cn_topic_0182554577_fig19292258105419"></a>  
     
-    ![](figures/deploy_camera.png))
+    ![](figures/deploy_camera.png)
     
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   首次deploy时，没有部署第三方库时会自动下载并编译，耗时可能比较久，请耐心等待。后续再重新编译时，不会重复下载编译，部署如上图所示。
-    >-   deploy时，需要选择与开发板通信的主机侧ip，一般为虚拟网卡配置的ip。如果此ip和开发板ip属于同网段，则会自动选择并部署。如果非同网段，则需要手动输入与开发板通信的主机侧ip才能完成deploy。
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   Automatic download and compilation will perform if 3rd party libraries are not deployed for the first time of deployment. This process might take some time, please wait patiently. It will not download and compilation repeatedly when recompiling later, deployment is shown as above. 
+    >-   Select the HOST IP connected to the developer board when deploying, which is usually the IP of virtual network card. If this IP belongs to the same segment as the developer board IP, it will be selected automatically and deployed. Otherwise, manual entering the IP connected to developer board is required for deployment.
 
-4.  开始编译，打开Mindstudio工具，在工具栏中点击**Build \> Build \> Build-Configuration**。如[图4](#zh-cn_topic_0203223312_fig5350165415161)所示，会在目录下生成build和run文件夹。
 
-    **图 4**  编译操作及生成文件<a name="zh-cn_topic_0203223312_fig5350165415161"></a>  
+3.  Begin to compile, open **Mind Studio** tool, click **Build \> Build \> Build-Configuration** in the toolbar, shown as [Figure 4](#zh-cn_topic_0203223312_fig5350165415161), **build** and **run** folders will be generated under the directory.
+
+
+    **Figure 4**  Compilation operation and generated files<a name="zh-cn_topic_0203223312_fig5350165415161"></a>  
     
 
     ![](figures/ascendcamera_build.png)
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >首次编译工程时，**Build \> Build**为灰色不可点击状态。需要点击**Build \> Edit Build Configuration**，配置编译参数后再进行编译。  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >When you compile the project for the first time, **Build \> Build** is gray and not clickable. Your need to click **Build \> Edit Build Configuration**, configure the compilation parameters and then compile.  
     >![](figures/build_configuration.png)  
 
-5.  <a name="zh-cn_topic_0203223312_li043217442034"></a>启动Presenter Server。
+4.  <a name="zh-cn_topic_0203223312_li043217442034"></a>Start Presenter Server.
 
-    打开Mindstudio工具的Terminal，此时默认在[步骤1](#zh-cn_topic_0203223312_li953280133816)中的代码存放路径下，执行如下命令在后台启动Ascend Camera应用的Presenter Server主程序。如[图5](#zh-cn_topic_0203223312_fig815812478221)所示。
+     Open **Terminal** of **Mind Studio** tool, it is in the path where code saved in [Step 1](#zh-cn_topic_0203223312_li953280133816) by default, run the following command to start the **Presenter Server** main program of the **Video Analysiscar**application, as shown in [Figure 5](#zh-cn_topic_0203223312_fig815812478221).
 
     **bash run\_present\_server.sh**
 
-    **图 5**  启动PresenterServer<a name="zh-cn_topic_0203223312_fig815812478221"></a>  
+    **Figure 5**  Start PresenterServer<a name="zh-cn_topic_0203223312_fig815812478221"></a>  
     
 
     ![](figures/ascend_camera_present_1.png)
 
-    当提示“Please choose one to show the presenter in browser\(default: 127.0.0.1\):“时，请输入在浏览器中访问Presenter Server服务所使用的IP地址（一般为访问Mind Studio的IP地址。）
+    -   When the message "Please choose one to show the presenter in browser (default: 127.0.0.1):" is displayed, enter the IP address used for accessing the **Presenter Server** service in the browser. Generally, the IP address is the IP address for accessing the **Mind Studio** service.
 
-    如[图6](#zh-cn_topic_0203223312_fig20890201582816)所示，请在“Current environment valid ip list“中选择通过浏览器访问Presenter Server服务使用的IP地址。
+    As shown in [Figure 6](#zh-cn_topic_0203223312_fig20890201582816), Select the IP address used by the browser to access the **Presenter Server** service in "Current environment valid ip list" and enter the path for storing video analysis data.
 
-    **图 6**  工程部署示意图<a name="zh-cn_topic_0203223312_fig20890201582816"></a>  
+    **Figure 6**  Project deployment<a name="zh-cn_topic_0203223312_fig20890201582816"></a>  
     
 
     ![](figures/ascend_camera_present_2.png)
 
-    如[图7](#zh-cn_topic_0203223312_fig143112216312)所示，表示presenter\_server的服务启动成功。
+     As shown in [Figure 7](#zh-cn_topic_0203223312_fig143112216312) it means **presenter\_server**  service starts successfully.
 
-    **图 7**  Presenter Server进程启动<a name="zh-cn_topic_0203223312_fig143112216312"></a>  
+    **Figure 7**  Starting the Presenter Server process<a name="zh-cn_topic_0203223312_fig143112216312"></a>  
     
 
     ![](figures/ascendcamera_present_3.png)
 
-    使用上图提示的URL登录Presenter Server，IP地址为[图6](#zh-cn_topic_0203223312_fig20890201582816)中输入的IP地址，端口号默为7003，如下图所示，表示Presenter Server启动成功。
+     Use the URL shown in the preceding figure to log in to **Presenter Server** (only the Chrome browser is supported). The IP address is that entered in [Figure 6](#zh-cn_topic_0203223312_fig20890201582816) and the default port number is 7003. The following figure indicates that Presenter Server is started successfully.
 
-    **图 8**  主页显示<a name="zh-cn_topic_0203223312_fig3338812171913"></a>  
-    ![](figures/主页显示.png "主页显示")
+    **Figure 8**  Home page<a name="zh-cn_topic_0203223312_fig3338812171913"></a>  
+    ![](figures/主页显示.png "Home page")
 
-    Presenter Server、Mind Studio与Atlas 200 DK之间通信使用的IP地址示例如下图所示：
+    The following figure shows the IP address used by the **Presenter Server** and **Mind Studio** to communicate with the Atlas 200 DK.
 
-    **图 9**  IP地址示例<a name="zh-cn_topic_0203223312_fig633991291914"></a>  
-    ![](figures/IP地址示例.png "IP地址示例")
+    **Figure 9**  Example IP Address<a name="zh-cn_topic_0203223312_fig633991291914"></a>  
+    ![](figures/IP地址示例.png "Example IP Address")
 
-    -   Atlas 200 DK开发者板使用的IP地址为192.168.1.2（USB方式连接）。
-    -   Presenter Server与Atlas 200 DK通信的IP地址为UI Host服务器中与Atlas 200 DK在同一网段的IP地址，例如：192.168.1.223。
-    -   通过浏览器访问Presenter Server的IP地址本示例为：10.10.0.1，由于Presenter Server与Mind Studio部署在同一服务器，此IP地址也为通过浏览器访问Mind Studio的IP。
+    -   The IP address of the Atlas 200 DK developer board is 192.168.1.2 (connected in USB mode).
+    -   The IP address used by the **Presenter Server** to communicate with the Atlas 200 DK is in the same network segment as the IP address of the Atlas 200 DK on the UI Host server. For example: 192.168.1.223.
+    -   The following is an example of accessing the IP address of the **Presenter Server** using a browser: 10.10.0.1, because the Presenter Server and **Mind Studio** are deployed on the same server, the IP address is also the IP address for accessing the Mind Studio through the browser.
 
 
-## 运行<a name="zh-cn_topic_0203223312_section123001119164920"></a>
+## Running<a name="zh-cn_topic_0203223312_section123001119164920"></a>
 
-运行Ascend Camera应用程序。
+Run the Ascend Camera application.
 
-在Mindstudio工具的工具栏中找到Run按钮，点击**Run \> Run 'sample-ascendcamera'**，在开发板运行程序，如[图10](#zh-cn_topic_0203223312_fig19482184244914)所示。
+Find **Run** button in the toolbar of **Mind Studio** tool, click **Run \> Run 'sample-ascendcamera'**, run the program on the developer board, as shown in [Figure 10](#zh-cn_topic_0203223312_fig19482184244914).
 
-**图 10**  程序执行示意图<a name="zh-cn_topic_0203223312_fig19482184244914"></a>  
+**Figure 10**  Program execution<a name="zh-cn_topic_0203223312_fig19482184244914"></a>  
 
 
 ![](figures/ascend_camera_run.png)
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->报错信息忽略，因为IDE无法为可执行程序传参，上述步骤是将可执行程序与依赖的库文件部署到开发板，需要ssh登录到开发板至相应的目录文件下手动执行，具体请参考以下步骤。  
+>![](public_sys-resources/icon-note.gif) **NOTE：**   
+>Please ignore the above error, because IDE cannot pass parameters for executable programs. The above steps are to deploy the executable program and the dependent library files to the developer board. This step requires to log in to developer board in SSH mode to the corresponding directory file and execute manually. For details, refer to the following steps.
 
-## 媒体信息离线保存<a name="zh-cn_topic_0203223312_section16681395119"></a>
+## Saving Media Information Offline<a name="zh-cn_topic_0203223312_section16681395119"></a>
 
-1.  在Mind Studio所在Ubuntu服务器中，以HwHiAiUser用户SSH登录到开发者板。
+1.  Log in to the Atlas DK developer board as the  **HwHiAiUser**  user in SSH mode on Ubuntu Server where **Mind Studio** is located.
 
     **ssh HwHiAiUser@192.168.1.2**
 
-    对于Atlas 200 DK，host\_ip默认为192.168.1.2（USB连接）或者192.168.0.2（NIC连接）。
+    For the Atlas 200 DK, the default value of host_ip is 192.168.1.2 (USB connection mode) or 192.168.0.2 (NIC connection mode).
 
-    对于AI加速云服务器，host\_ip即为当前Mind Studio所在服务器的IP地址。
-
-2.  进入Ascend Camera的可执行文件所在路径。例如执行如下命令。
+    For  AI acceleration cloud server, **host\_ip** indicates  the IP address of the server where **Mind Studio** is currently located.
+    
+2.  Go to the path of the executable file of Ascend camera, run the following command.
 
     **cd \~/HIAI\_PROJECTS/workspace\_mind\_studio/sample\_ascendcamera\_5b4f8b24/out**
 
-3.  例如执行**workspace\_mind\_studio\_sample\_ascendcamera**命令进行媒体信息离线保存。
+3.  Run **workspace\_mind\_studio\_sample\_ascendcamera** command to save media information offline.
 
-    从摄像头获取图片并保存为jpg文件，如果已经存在同名文件则覆盖。
-
+    Obtain the image from the camera and save it as a **.jpg** file. If a file with the same name already exists, it will be overwritten. 
+    
     **./** **workspace\_mind\_studio\_sample\_ascendcamera-i -c 1 -o   _/localDirectory/filename.jpg_  --overwrite**
 
-    -   -i：代表获取jpg格式的图片。
-    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://ascend.huawei.com/doc)中的“如何查看摄像头所属Channel”。
-    -   -o：表示文件存储位置，此处localDirectory为本地已存在的文件夹名称，filename.jpg为保存的图片名称，可用户自定义。
+    -   **-i**: Indicates that a JPG image is obtained.
+    -   **-c**: Indicates the channel to which a camera belongs to. This parameter can be set to  **0**  or  **1**. The value  **0**  corresponds to  **Camera1**, and the value  **1**  corresponds to  **Camera2**. If this parameter is not set, the default value  **0**  is used. For details, see  **View the Channel to Which a Camera Belongs** of [Atlas 200 DK User Guide](https://ascend.huawei.com/doc).
+    -   **-o**: Indicates the file storage location.  **localDirectory**  is the name of a local folder.  **filename.jpg**  is the name of a saved image, which can be user-defined.
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >此路径HwHiAiUser需要有可读写权限。  
+        >![](public_sys-resources/icon-note.gif) **NOTE：**   
+        >The  **HwHiAiUser**  user must have the read and write permissions on the path.  
+        
+    -   **--overwrite**：Overwrites the existing file with the same name.
 
-    -   --overwrite：覆盖已存在的同名文件。
-
-    其他详细参数请执行   **./** **workspace\_mind\_studio\_sample\_ascendcamera**命令或者**./** **workspace\_mind\_studio\_sample\_ascendcamera --help**  命令参见帮助信息。
+    For other parameters, run the **./** **workspace\_mind\_studio\_sample\_ascendcamera**command or the **./** **workspace\_mind\_studio\_sample\_ascendcamera --help**  command. For details, see the help information.
 
 
-## 通过Presenter Server播放实时视频<a name="zh-cn_topic_0203223312_section20204154716116"></a>
+## Playing a Real-Time Video Through Presenter Server<a name="zh-cn_topic_0203223312_section20204154716116"></a>
 
-1.  在Mind Studio所在Ubuntu服务器中，以HwHiAiUser用户SSH登录到开发者板。
+1.  Log in to the Atlas DK developer board as the  **HwHiAiUser**  user in SSH mode on Ubuntu Server where **Mind Studio** is located.
 
     **ssh HwHiAiUser@192.168.1.2**
 
-2.  进入Ascend Camera的可执行文件所在路径。例如执行如下命令。
+2.  Go to the path of the executable file of Ascend camera, run the following command.
 
     **cd \~/HIAI\_PROJECTS/workspace\_mind\_studio/sample\_ascendcamera\_5b4f8b24/out**
 
-3.  例如执行下命令将通过摄像头捕获的视频传输到Presenter Server。
+3.  Run the following command to transmit the video captured by the camera to **Presenter Server**:
 
     **./workspace\_mind\_studio\_sample\_ascendcamera -v -c  _1_   -t  _60_ **--fps  _20_**  -w  _704_  -h  _576_  -s  _192.168.1.223_:7002/**_**presenter\_view\_app\_name**_
 
-    -   -v：代表获取摄像头的视频，用来在Presenter Server端展示。
-    -   -c：表示摄像头所在的channel，此参数有“0”和“1”两个选项，“0“对应“Camera1“，“1“对应“Camera2“，如果不填写，默认为“0”。查询摄像头所属Channel的方法请参考[Atlas 200 DK使用指南](https://ascend.huawei.com/documentation)中的“如何查看摄像头所属Channel”。
-    -   -t：表示获取60s的视频文件，如果不指定此参数，则获取视频文件直至程序退出。
-    -   --fps：表示存储视频的帧率，取值范围为1\~20，如果不设置此参数，则默认存储的视频帧率为10fps。
-    -   -w：表示存储视频的宽。
-    -   -h：表示存储视频的高。
-    -   -s后面的值_ 192.168.1.223_  为Presenter中7002端口对应的IP地址（如[步骤5](#zh-cn_topic_0203223312_li043217442034)中启动Presenter Server回显显示，即为与Atlas 200 DK开发者板通信的IP地址），7002为Ascendcamera应用对应的Presenter Server服务器的默认端口号。
-    -   _presenter\_view\_app\_name_：为在Presenter Server端展示的“View Name“，用户自定义，需要保持唯一，只能为大小写字母、数字、“\_”的组合，位数3\~20。
+    -   **-v**: Indicates that the video of the camera is obtained and displayed on the **Presenter Server**.
+    -   **-c**: Indicates the channel to which a camera belongs to. This parameter can be set to  **0**  or  **1**. The value  **0**  corresponds to  **Camera1**  in, and the value  **1**  corresponds to  **Camera2**  in. If this parameter is not set, the default value  **0**  is used. For details, see  **View the Channel to Which a Camera Belongs** of [Atlas 200 DK User Guide](https://ascend.huawei.com/documentation).
+    -   **-t**: Indicates that a video file lasting 60 seconds is obtained. If this parameter is not specified, the video file is obtained until the application exits.
+    -   **--fps**: Indicates the frame rate of a saved video. The value range is 1\~20. The default video frame rate is 10 fps.
+    -   **-w**: Indicates the width of a saved video.
+    -   **-h**: Indicates the height of a saved video.
+    -   **_192.168.1.223_** behind **-s** is the IP address corresponding to the 7002 port in **Presenter Server** (the IP address used for communicating with the Atlas 200 DK developer board entered in as shown in [Step 5](#zh-cn_topic_0203223312_li043217442034)), The default port number of**Presenter Server** corresponding to the Ascendcamera application is 7002.
+    -   **_presenter\_view\_app\_name_**：indicates  **View Name**  displayed on the **Presenter Server** page, which is user-defined. The value of this parameter must be unique on the **Presenter Server** page. It can only be a combination of uppercase and lowercase letters, numbers, and "_", with a digit of 3 \~20.   
 
-    其他详细参数请执行  **./workspace\_mind\_studio\_sample\_ascendcamera**  命令或者**./workspace\_mind\_studio\_sample\_ascendcamera** **--help**命令参见帮助信息。
+    For other parameters, run the   **./workspace\_mind\_studio\_sample\_ascendcamera**  command or the **./workspace\_mind\_studio\_sample\_ascendcamera** **--help** command. For details, see the help information.
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   Ascendcamera的Presenter Server最多支持10路Channel同时显示，每个_presenter\_view\_app\_name_   对应一路Channel。  
-    >-   由于硬件的限制，每一路支持的最大帧率是20fps，受限于网络带宽的影响，帧率会自动适配为较低的帧率进行展示。  
+    >![](public_sys-resources/icon-note.gif) **NOTE：**   
+    >-   The **Presenter Server** of the Ascend camera application supports a maximum of 10 channels at the same time (each **_presenter_view_app_name_** parameter corresponds to a channel).
+    >-   Due to hardware limitations, the maximum frame rate supported by each channel is 20fps, a lower frame rate is automatically used when the network bandwidth is low.
 
+## Follow-up Operations<a name="zh-cn_topic_0203223312_section856641210261"></a>
 
-## 后续处理<a name="zh-cn_topic_0203223312_section856641210261"></a>
+The Presenter Server service is always in the running state after being started. To stop the Presenter Server service of the Ascend camera application, perform the following operations:
 
-Presenter Server服务启动后会一直处于运行状态，若想停止Ascendcamera应用对应的Presenter Server服务，可执行如下操作。
-
-以Mind Studio安装用户在Mind Studio所在服务器中的的命令行中执行如下命令查看Ascendcamera应用对应的Presenter Server服务的进程。
+Run the following command to check the process of the **Presenter Server** service corresponding to the Ascend camera application as the **Mind Studio** installation user:
 
 **ps -ef | grep presenter | grep display**
 
@@ -217,9 +219,9 @@ ascend@ascend-HP-ProDesk-600-G4-PCI-MT:~/sample-ascendcamera$ ps -ef | grep pres
 ascend 5758 20313 0 14:28 pts/24?? 00:00:00 python3 presenterserver/presenter_server.py --app display
 ```
 
-如上所示  _5758_  即为Ascendcamera应用对应的Presenter Server服务的进程ID。
+Where  **_5758_** indicates the process ID of the **Presenter Server** service corresponding to the Ascend camera application.
 
-若想停止此服务，执行如下命令：
+To stop the service, run the following command:
 
 **kill -9** _5758_
 
