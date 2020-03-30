@@ -72,7 +72,7 @@ function download_code()
         return 1
     fi
     mkdir ${script_path}/presenterserver
-    cp -rf  ${script_path}/sdk-presenter-${presenterserver_version}/presenterserver/* ${script_path}/presenterserver
+    cp -rf  ${script_path}/sdk-presenter/presenterserver/* ${script_path}/presenterserver
     rm -rf ${script_path}/presenterserver-${presenterserver_version}.zip
     rm -rf ${script_path}/sdk-presenter
     rm -rf ${script_path}/presenterserver-${presenterserver_version}.ing
